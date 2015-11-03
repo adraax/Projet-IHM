@@ -53,6 +53,13 @@ namespace Main_project_VERON_MERLIN
             dba.Fill(ds, "Users");
 
             Trace.WriteLine(ds.Tables["Users"].Rows.Count);
+            if (ds.Tables["Users"].Rows.Count == 1)
+            {
+                this.Visible = false;
+                Accueil_user fenetreAccueilUser= new Accueil_user(new User(int.Parse(ds.Tables["Users"].Rows[0]["ID"].ToString()), ds.Tables["Users"].Rows[0]["USERNAME"].ToString()));
+                fenetreAccueilUser.ShowDialog();
+                this.Dispose();
+            }
         }
     }
 }

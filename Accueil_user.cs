@@ -12,9 +12,12 @@ namespace Main_project_VERON_MERLIN
 {
     public partial class Accueil_user : Form
     {
-        public Accueil_user()
+        private User user;
+        public Accueil_user(User user)
         {
             InitializeComponent();
+            this.user = user;
+            username.Text = user.Name;
         }
 
         private void Form2_Load(object sender, EventArgs e)

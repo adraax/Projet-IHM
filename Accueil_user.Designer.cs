@@ -33,6 +33,7 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.username = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // button1
@@ -80,11 +81,21 @@
             this.label1.TabIndex = 4;
             this.label1.Text = "Séries phares";
             // 
+            // username
+            // 
+            this.username.AutoSize = true;
+            this.username.Location = new System.Drawing.Point(36, 9);
+            this.username.Name = "username";
+            this.username.Size = new System.Drawing.Size(35, 13);
+            this.username.TabIndex = 5;
+            this.username.Text = "label2";
+            // 
             // Accueil_user
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(510, 258);
+            this.Controls.Add(this.username);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.listBox1);
             this.Controls.Add(this.textBox1);
@@ -105,5 +116,6 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label username;
     }
 }

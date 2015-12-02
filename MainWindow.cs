@@ -53,5 +53,10 @@ namespace Main_project_VERON_MERLIN
             }
             this.Dispose();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            //TODO gestion du clic sur le boutton, je le ferais demain.
+        }
     }
 }

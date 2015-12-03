@@ -16,5 +16,10 @@ namespace Main_project_VERON_MERLIN
         {
             InitializeComponent();
         }
+
+        private void richTextBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

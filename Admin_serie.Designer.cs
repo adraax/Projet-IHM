@@ -37,12 +37,14 @@
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(12, 56);
+            this.textBox1.Location = new System.Drawing.Point(15, 79);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(145, 22);
             this.textBox1.TabIndex = 0;
@@ -58,7 +60,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(12, 104);
+            this.button1.Location = new System.Drawing.Point(15, 169);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(145, 23);
             this.button1.TabIndex = 2;
@@ -67,7 +69,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(12, 133);
+            this.button2.Location = new System.Drawing.Point(15, 213);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(145, 23);
             this.button2.TabIndex = 3;
@@ -76,7 +78,7 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(276, 159);
+            this.button3.Location = new System.Drawing.Point(266, 282);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(113, 23);
             this.button3.TabIndex = 4;
@@ -96,7 +98,7 @@
             // 
             this.textBox2.Location = new System.Drawing.Point(276, 79);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(113, 22);
+            this.textBox2.Size = new System.Drawing.Size(217, 22);
             this.textBox2.TabIndex = 6;
             // 
             // label3
@@ -117,19 +119,40 @@
             this.label4.TabIndex = 8;
             this.label4.Text = "Synopsis";
             // 
-            // textBox3
+            // richTextBox1
             // 
-            this.textBox3.Location = new System.Drawing.Point(276, 131);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(113, 22);
-            this.textBox3.TabIndex = 9;
+            this.richTextBox1.Location = new System.Drawing.Point(279, 131);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.Size = new System.Drawing.Size(214, 145);
+            this.richTextBox1.TabIndex = 9;
+            this.richTextBox1.Text = "";
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(15, 120);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(145, 23);
+            this.button4.TabIndex = 10;
+            this.button4.Text = "Rechercher";
+            this.button4.UseVisualStyleBackColor = true;
+            // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(15, 253);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(142, 23);
+            this.button5.TabIndex = 11;
+            this.button5.Text = "Modifier un épisode existant";
+            this.button5.UseVisualStyleBackColor = true;
             // 
             // Admin_serie
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(441, 210);
-            this.Controls.Add(this.textBox3);
+            this.ClientSize = new System.Drawing.Size(540, 325);
+            this.Controls.Add(this.button5);
+            this.Controls.Add(this.button4);
+            this.Controls.Add(this.richTextBox1);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.textBox2);
@@ -157,6 +180,8 @@
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button button5;
     }
 }

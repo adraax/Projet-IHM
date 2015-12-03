@@ -67,6 +67,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Accueil_admin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Accueil_admin.Designer.cs">
+      <DependentUpon>Accueil_admin.cs</DependentUpon>
+    </Compile>
     <Compile Include="Connexion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -85,6 +91,12 @@
     <Compile Include="fiche_serie.Designer.cs">
       <DependentUpon>fiche_serie.cs</DependentUpon>
     </Compile>
+    <Compile Include="Admin_serie.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin_serie.Designer.cs">
+      <DependentUpon>Admin_serie.cs</DependentUpon>
+    </Compile>
     <Compile Include="MainWindow.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -100,6 +112,9 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="User.cs" />
+    <EmbeddedResource Include="Accueil_admin.resx">
+      <DependentUpon>Accueil_admin.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Connexion.resx">
       <DependentUpon>Connexion.cs</DependentUpon>
     </EmbeddedResource>
@@ -111,6 +126,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="fiche_serie.resx">
       <DependentUpon>fiche_serie.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin_serie.resx">
+      <DependentUpon>Admin_serie.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainWindow.resx">
       <DependentUpon>MainWindow.cs</DependentUpon>

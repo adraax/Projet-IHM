@@ -10,21 +10,16 @@ using System.Windows.Forms;
 
 namespace Main_project_VERON_MERLIN
 {
-    public partial class Accueil_admin : Form
+    public partial class Fiche_épisode : Form
     {
-        public Accueil_admin()
+        public Fiche_épisode()
         {
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void panel2_Paint(object sender, PaintEventArgs e)
         {
-            //Envoi sur admin_serie
-        }
 
-        private void button2_Click(object sender, EventArgs e)
-        {
-            //Envoi sur accueil_admin
         }
     }
 }

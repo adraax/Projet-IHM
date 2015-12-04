@@ -36,11 +36,11 @@
             this.usernameConnexion = new System.Windows.Forms.TextBox();
             this.usernameLabelConnexion = new System.Windows.Forms.Label();
             this.inscriptionTabPage = new System.Windows.Forms.TabPage();
+            this.button1 = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.usernameInscription = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
             this.conInscrTabControl.SuspendLayout();
             this.connexionTabPage.SuspendLayout();
             this.inscriptionTabPage.SuspendLayout();
@@ -52,7 +52,7 @@
             this.conInscrTabControl.Controls.Add(this.inscriptionTabPage);
             this.conInscrTabControl.Dock = System.Windows.Forms.DockStyle.Fill;
             this.conInscrTabControl.Location = new System.Drawing.Point(0, 0);
-            this.conInscrTabControl.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.conInscrTabControl.Margin = new System.Windows.Forms.Padding(4);
             this.conInscrTabControl.Name = "conInscrTabControl";
             this.conInscrTabControl.SelectedIndex = 0;
             this.conInscrTabControl.Size = new System.Drawing.Size(428, 197);
@@ -66,9 +66,9 @@
             this.connexionTabPage.Controls.Add(this.usernameConnexion);
             this.connexionTabPage.Controls.Add(this.usernameLabelConnexion);
             this.connexionTabPage.Location = new System.Drawing.Point(4, 25);
-            this.connexionTabPage.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.connexionTabPage.Margin = new System.Windows.Forms.Padding(4);
             this.connexionTabPage.Name = "connexionTabPage";
-            this.connexionTabPage.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.connexionTabPage.Padding = new System.Windows.Forms.Padding(4);
             this.connexionTabPage.Size = new System.Drawing.Size(420, 168);
             this.connexionTabPage.TabIndex = 0;
             this.connexionTabPage.Text = "Connexion";
@@ -77,7 +77,7 @@
             // connexion
             // 
             this.connexion.Location = new System.Drawing.Point(143, 111);
-            this.connexion.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.connexion.Margin = new System.Windows.Forms.Padding(4);
             this.connexion.Name = "connexion";
             this.connexion.Size = new System.Drawing.Size(133, 28);
             this.connexion.TabIndex = 4;
@@ -88,7 +88,7 @@
             // passwordConnexion
             // 
             this.passwordConnexion.Location = new System.Drawing.Point(143, 78);
-            this.passwordConnexion.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.passwordConnexion.Margin = new System.Windows.Forms.Padding(4);
             this.passwordConnexion.Name = "passwordConnexion";
             this.passwordConnexion.PasswordChar = '*';
             this.passwordConnexion.Size = new System.Drawing.Size(132, 22);
@@ -107,7 +107,7 @@
             // usernameConnexion
             // 
             this.usernameConnexion.Location = new System.Drawing.Point(143, 23);
-            this.usernameConnexion.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.usernameConnexion.Margin = new System.Windows.Forms.Padding(4);
             this.usernameConnexion.Name = "usernameConnexion";
             this.usernameConnexion.Size = new System.Drawing.Size(132, 22);
             this.usernameConnexion.TabIndex = 1;
@@ -130,13 +130,30 @@
             this.inscriptionTabPage.Controls.Add(this.usernameInscription);
             this.inscriptionTabPage.Controls.Add(this.label1);
             this.inscriptionTabPage.Location = new System.Drawing.Point(4, 25);
-            this.inscriptionTabPage.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.inscriptionTabPage.Margin = new System.Windows.Forms.Padding(4);
             this.inscriptionTabPage.Name = "inscriptionTabPage";
-            this.inscriptionTabPage.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.inscriptionTabPage.Padding = new System.Windows.Forms.Padding(4);
             this.inscriptionTabPage.Size = new System.Drawing.Size(420, 168);
             this.inscriptionTabPage.TabIndex = 1;
             this.inscriptionTabPage.Text = "Inscription";
             this.inscriptionTabPage.UseVisualStyleBackColor = true;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(155, 111);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(130, 26);
+            this.button1.TabIndex = 4;
+            this.button1.Text = "S\'inscrire";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(155, 72);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(132, 22);
+            this.textBox1.TabIndex = 3;
             // 
             // label2
             // 
@@ -151,7 +168,7 @@
             // usernameInscription
             // 
             this.usernameInscription.Location = new System.Drawing.Point(155, 23);
-            this.usernameInscription.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.usernameInscription.Margin = new System.Windows.Forms.Padding(4);
             this.usernameInscription.Name = "usernameInscription";
             this.usernameInscription.Size = new System.Drawing.Size(132, 22);
             this.usernameInscription.TabIndex = 1;
@@ -166,23 +183,6 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Nom d\'utilisateur :";
             // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(155, 72);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(132, 22);
-            this.textBox1.TabIndex = 3;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(155, 111);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(130, 26);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "S\'inscrire";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -190,9 +190,9 @@
             this.ClientSize = new System.Drawing.Size(428, 197);
             this.Controls.Add(this.conInscrTabControl);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "MainWindow";
-            this.Text = "MainWindow";
+            this.Text = "Connexion";
             this.conInscrTabControl.ResumeLayout(false);
             this.connexionTabPage.ResumeLayout(false);
             this.connexionTabPage.PerformLayout();

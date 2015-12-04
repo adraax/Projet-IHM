@@ -67,18 +67,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Accueil_admin.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Accueil_admin.Designer.cs">
-      <DependentUpon>Accueil_admin.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Connexion.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Connexion.Designer.cs">
-      <DependentUpon>Connexion.cs</DependentUpon>
-    </Compile>
     <Compile Include="Accueil_user.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -91,11 +79,11 @@
     <Compile Include="fiche_serie.Designer.cs">
       <DependentUpon>fiche_serie.cs</DependentUpon>
     </Compile>
-    <Compile Include="Admin_serie.cs">
+    <Compile Include="Fiche_épisode.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Admin_serie.Designer.cs">
-      <DependentUpon>Admin_serie.cs</DependentUpon>
+    <Compile Include="Fiche_épisode.Designer.cs">
+      <DependentUpon>Fiche_épisode.cs</DependentUpon>
     </Compile>
     <Compile Include="MainWindow.cs">
       <SubType>Form</SubType>
@@ -112,23 +100,17 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="User.cs" />
-    <EmbeddedResource Include="Accueil_admin.resx">
-      <DependentUpon>Accueil_admin.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Connexion.resx">
-      <DependentUpon>Connexion.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Accueil_user.resx">
       <DependentUpon>Accueil_user.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Fiche_épisode.resx">
+      <DependentUpon>Fiche_épisode.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Series_suivies.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="fiche_serie.resx">
       <DependentUpon>fiche_serie.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Admin_serie.resx">
-      <DependentUpon>Admin_serie.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainWindow.resx">
       <DependentUpon>MainWindow.cs</DependentUpon>

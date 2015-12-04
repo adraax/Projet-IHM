@@ -40,7 +40,7 @@
             // button2
             // 
             this.button2.Location = new System.Drawing.Point(95, 243);
-            this.button2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button2.Margin = new System.Windows.Forms.Padding(4);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(192, 44);
             this.button2.TabIndex = 1;
@@ -50,7 +50,7 @@
             // textBox1
             // 
             this.textBox1.Location = new System.Drawing.Point(95, 213);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(4);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(235, 22);
             this.textBox1.TabIndex = 2;
@@ -63,7 +63,7 @@
             this.listBox1.Items.AddRange(new object[] {
             "Séries phares"});
             this.listBox1.Location = new System.Drawing.Point(371, 75);
-            this.listBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.listBox1.Margin = new System.Windows.Forms.Padding(4);
             this.listBox1.Name = "listBox1";
             this.listBox1.Size = new System.Drawing.Size(281, 212);
             this.listBox1.TabIndex = 3;
@@ -121,7 +121,7 @@
             this.Controls.Add(this.listBox1);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.button2);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Accueil_user";
             this.Text = "Accueil";
             this.Load += new System.EventHandler(this.Form2_Load);

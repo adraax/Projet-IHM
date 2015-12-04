@@ -21,5 +21,10 @@ namespace Main_project_VERON_MERLIN
         {
 
         }
+
+        private void fiche_serie_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

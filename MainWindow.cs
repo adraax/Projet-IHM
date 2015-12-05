@@ -16,67 +16,50 @@ namespace Main_project_VERON_MERLIN
 {
     public partial class MainWindow : Form
     {
+        private ConnexionOracle bdd;
+        private bool quitter = false;
         public MainWindow()
         {
             InitializeComponent();
+            bdd = new ConnexionOracle(); //Objet servant aux requêtes vers la BD
         }
 
         private void connexion_Click(object sender, EventArgs e)
         {
-            this.Visible = false;
+            string commande = $"SELECT * FROM PROJET_IHM_USERS WHERE USERNAME = '{usernameConnexion.Text}' AND PASSWORD = '{passwordConnexion.Text}'";
+            DataSet ds = bdd.Select(commande);
 
-            #region Accès BD
-            OracleConnection connec = new OracleConnection();
-            connec.ConnectionString = "User Id=om141055; Password=om141055; Data Source=//ufrsciencestech.u-bourgogne.fr:25559/ense2015";
-            DbProviderFactory dbpf;
-            dbpf = DbProviderFactories.GetFactory("Oracle.DataAccess.Client");
 
-            connec.Open();
-
-            DbDataAdapter dba;
-            // initialisation de la connexion conn et de dbpf
-            dba = dbpf.CreateDataAdapter();
-            dba.SelectCommand = connec.CreateCommand();
-            dba.SelectCommand.CommandText = $"SELECT * FROM PROJET_IHM_USERS WHERE USERNAME = '{usernameConnexion.Text}' AND PASSWORD = '{passwordConnexion.Text}' AND ACTIVE = 1";
-            DataSet ds = new DataSet();
-            dba.Fill(ds, "Users");
-
-            Trace.WriteLine(ds.Tables["Users"].Rows.Count);
-
-            #endregion
-
-            if (ds.Tables["Users"].Rows.Count == 1)
+            if (ds.Tables["Data"].Rows.Count == 1)
             {
                 this.Visible = false;
-                Accueil_user fenetreAccueilUser = new Accueil_user(new User(int.Parse(ds.Tables["Users"].Rows[0]["ID"].ToString()), ds.Tables["Users"].Rows[0]["USERNAME"].ToString()));
-                fenetreAccueilUser.ShowDialog();
+                Trace.WriteLine("-- Utilisateur trouvé, ouverture accueil");
+
+                Properties.Settings.Default.username = (string) ds.Tables["Data"].Rows[0]["USERNAME"];
+
+                if((string)(ds.Tables["Data"].Rows[0]["ADMIN"]) == "1")
+                    Properties.Settings.Default.admin = true;
+                else
+                    Properties.Settings.Default.admin = false;
+                Properties.Settings.Default.Save();
+
             }
-            this.Dispose();
+            else
+                Trace.WriteLine("-- Erreur Identifiants");
+
+            if(quitter)
+            {
+                Properties.Settings.Default.username = "";
+                Properties.Settings.Default.admin = false;
+                Properties.Settings.Default.Save();
+                this.Dispose();
+            }
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void inscription_Click(object sender, EventArgs e)
         {
-            //TODO gestion du clic sur le boutton
-            #region Accès BD
-            OracleConnection connec = new OracleConnection();
-            connec.ConnectionString = "User Id=om141055; Password=om141055; Data Source=//ufrsciencestech.u-bourgogne.fr:25559/ense2015";
-            DbProviderFactory dbpf;
-            dbpf = DbProviderFactories.GetFactory("Oracle.DataAccess.Client");
-
-            connec.Open();
-
-            DbDataAdapter dba;
-            // initialisation de la connexion conn et de dbpf
-            dba = dbpf.CreateDataAdapter();
-            dba.SelectCommand = connec.CreateCommand();
-            dba.SelectCommand.CommandText = $"INSERT INTO PROJET_IHM_USERS VALUES ('{usernameConnexion.Text}' , '{passwordConnexion.Text}' , 1";
-            DataSet ds = new DataSet();
-            dba.Fill(ds, "Users");
-
-            Trace.WriteLine(ds.Tables["Users"].Rows.Count);
-
-            #endregion
-
+            string commande = $"SELECT * FROM PROJET_IHM_USERS WHERE USERNAME = '{usernameConnexion.Text}' ";
+            DataSet ds = bdd.Select(commande);
         }
     }
 }

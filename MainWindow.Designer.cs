@@ -36,8 +36,12 @@
             this.usernameConnexion = new System.Windows.Forms.TextBox();
             this.usernameLabelConnexion = new System.Windows.Forms.Label();
             this.inscriptionTabPage = new System.Windows.Forms.TabPage();
-            this.button1 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.errorPassword = new System.Windows.Forms.Label();
+            this.errorUsername = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.confirmPassword = new System.Windows.Forms.TextBox();
+            this.inscription = new System.Windows.Forms.Button();
+            this.passwordInscription = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.usernameInscription = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -52,10 +56,9 @@
             this.conInscrTabControl.Controls.Add(this.inscriptionTabPage);
             this.conInscrTabControl.Dock = System.Windows.Forms.DockStyle.Fill;
             this.conInscrTabControl.Location = new System.Drawing.Point(0, 0);
-            this.conInscrTabControl.Margin = new System.Windows.Forms.Padding(4);
             this.conInscrTabControl.Name = "conInscrTabControl";
             this.conInscrTabControl.SelectedIndex = 0;
-            this.conInscrTabControl.Size = new System.Drawing.Size(428, 197);
+            this.conInscrTabControl.Size = new System.Drawing.Size(321, 213);
             this.conInscrTabControl.TabIndex = 3;
             // 
             // connexionTabPage
@@ -65,21 +68,19 @@
             this.connexionTabPage.Controls.Add(this.passwordLabelConnexion);
             this.connexionTabPage.Controls.Add(this.usernameConnexion);
             this.connexionTabPage.Controls.Add(this.usernameLabelConnexion);
-            this.connexionTabPage.Location = new System.Drawing.Point(4, 25);
-            this.connexionTabPage.Margin = new System.Windows.Forms.Padding(4);
+            this.connexionTabPage.Location = new System.Drawing.Point(4, 22);
             this.connexionTabPage.Name = "connexionTabPage";
-            this.connexionTabPage.Padding = new System.Windows.Forms.Padding(4);
-            this.connexionTabPage.Size = new System.Drawing.Size(420, 168);
+            this.connexionTabPage.Padding = new System.Windows.Forms.Padding(3);
+            this.connexionTabPage.Size = new System.Drawing.Size(313, 187);
             this.connexionTabPage.TabIndex = 0;
             this.connexionTabPage.Text = "Connexion";
             this.connexionTabPage.UseVisualStyleBackColor = true;
             // 
             // connexion
             // 
-            this.connexion.Location = new System.Drawing.Point(143, 111);
-            this.connexion.Margin = new System.Windows.Forms.Padding(4);
+            this.connexion.Location = new System.Drawing.Point(107, 90);
             this.connexion.Name = "connexion";
-            this.connexion.Size = new System.Drawing.Size(133, 28);
+            this.connexion.Size = new System.Drawing.Size(100, 23);
             this.connexion.TabIndex = 4;
             this.connexion.Text = "Connexion";
             this.connexion.UseVisualStyleBackColor = true;
@@ -87,112 +88,147 @@
             // 
             // passwordConnexion
             // 
-            this.passwordConnexion.Location = new System.Drawing.Point(143, 78);
-            this.passwordConnexion.Margin = new System.Windows.Forms.Padding(4);
+            this.passwordConnexion.Location = new System.Drawing.Point(107, 63);
             this.passwordConnexion.Name = "passwordConnexion";
             this.passwordConnexion.PasswordChar = '*';
-            this.passwordConnexion.Size = new System.Drawing.Size(132, 22);
+            this.passwordConnexion.Size = new System.Drawing.Size(100, 20);
             this.passwordConnexion.TabIndex = 3;
             // 
             // passwordLabelConnexion
             // 
             this.passwordLabelConnexion.AutoSize = true;
-            this.passwordLabelConnexion.Location = new System.Drawing.Point(143, 57);
-            this.passwordLabelConnexion.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.passwordLabelConnexion.Location = new System.Drawing.Point(107, 46);
             this.passwordLabelConnexion.Name = "passwordLabelConnexion";
-            this.passwordLabelConnexion.Size = new System.Drawing.Size(101, 17);
+            this.passwordLabelConnexion.Size = new System.Drawing.Size(77, 13);
             this.passwordLabelConnexion.TabIndex = 2;
             this.passwordLabelConnexion.Text = "Mot de passe :";
             // 
             // usernameConnexion
             // 
-            this.usernameConnexion.Location = new System.Drawing.Point(143, 23);
-            this.usernameConnexion.Margin = new System.Windows.Forms.Padding(4);
+            this.usernameConnexion.Location = new System.Drawing.Point(107, 19);
             this.usernameConnexion.Name = "usernameConnexion";
-            this.usernameConnexion.Size = new System.Drawing.Size(132, 22);
+            this.usernameConnexion.Size = new System.Drawing.Size(100, 20);
             this.usernameConnexion.TabIndex = 1;
             // 
             // usernameLabelConnexion
             // 
             this.usernameLabelConnexion.AutoSize = true;
-            this.usernameLabelConnexion.Location = new System.Drawing.Point(139, 4);
-            this.usernameLabelConnexion.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.usernameLabelConnexion.Location = new System.Drawing.Point(104, 3);
             this.usernameLabelConnexion.Name = "usernameLabelConnexion";
-            this.usernameLabelConnexion.Size = new System.Drawing.Size(121, 17);
+            this.usernameLabelConnexion.Size = new System.Drawing.Size(90, 13);
             this.usernameLabelConnexion.TabIndex = 0;
             this.usernameLabelConnexion.Text = "Nom d\'utilisateur :";
             // 
             // inscriptionTabPage
             // 
-            this.inscriptionTabPage.Controls.Add(this.button1);
-            this.inscriptionTabPage.Controls.Add(this.textBox1);
+            this.inscriptionTabPage.Controls.Add(this.errorPassword);
+            this.inscriptionTabPage.Controls.Add(this.errorUsername);
+            this.inscriptionTabPage.Controls.Add(this.label3);
+            this.inscriptionTabPage.Controls.Add(this.confirmPassword);
+            this.inscriptionTabPage.Controls.Add(this.inscription);
+            this.inscriptionTabPage.Controls.Add(this.passwordInscription);
             this.inscriptionTabPage.Controls.Add(this.label2);
             this.inscriptionTabPage.Controls.Add(this.usernameInscription);
             this.inscriptionTabPage.Controls.Add(this.label1);
-            this.inscriptionTabPage.Location = new System.Drawing.Point(4, 25);
-            this.inscriptionTabPage.Margin = new System.Windows.Forms.Padding(4);
+            this.inscriptionTabPage.Location = new System.Drawing.Point(4, 22);
             this.inscriptionTabPage.Name = "inscriptionTabPage";
-            this.inscriptionTabPage.Padding = new System.Windows.Forms.Padding(4);
-            this.inscriptionTabPage.Size = new System.Drawing.Size(420, 168);
+            this.inscriptionTabPage.Padding = new System.Windows.Forms.Padding(3);
+            this.inscriptionTabPage.Size = new System.Drawing.Size(313, 187);
             this.inscriptionTabPage.TabIndex = 1;
             this.inscriptionTabPage.Text = "Inscription";
             this.inscriptionTabPage.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // errorPassword
             // 
-            this.button1.Location = new System.Drawing.Point(155, 111);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(130, 26);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "S\'inscrire";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.errorPassword.AutoSize = true;
+            this.errorPassword.ForeColor = System.Drawing.Color.Red;
+            this.errorPassword.Location = new System.Drawing.Point(52, 131);
+            this.errorPassword.Name = "errorPassword";
+            this.errorPassword.Size = new System.Drawing.Size(236, 13);
+            this.errorPassword.TabIndex = 8;
+            this.errorPassword.Text = "Les deux mots de passes doivent être identiques";
+            this.errorPassword.Visible = false;
             // 
-            // textBox1
+            // errorUsername
             // 
-            this.textBox1.Location = new System.Drawing.Point(155, 72);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(132, 22);
-            this.textBox1.TabIndex = 3;
+            this.errorUsername.AutoSize = true;
+            this.errorUsername.ForeColor = System.Drawing.Color.Red;
+            this.errorUsername.Location = new System.Drawing.Point(89, 42);
+            this.errorUsername.Name = "errorUsername";
+            this.errorUsername.Size = new System.Drawing.Size(157, 13);
+            this.errorUsername.TabIndex = 7;
+            this.errorUsername.Text = "Ce nom d\'utilisateur est déjà pris";
+            this.errorUsername.Visible = false;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(101, 92);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(136, 13);
+            this.label3.TabIndex = 6;
+            this.label3.Text = "Confirmez le mot de passe :";
+            // 
+            // confirmPassword
+            // 
+            this.confirmPassword.Location = new System.Drawing.Point(120, 108);
+            this.confirmPassword.Name = "confirmPassword";
+            this.confirmPassword.Size = new System.Drawing.Size(100, 20);
+            this.confirmPassword.TabIndex = 5;
+            // 
+            // inscription
+            // 
+            this.inscription.Location = new System.Drawing.Point(120, 146);
+            this.inscription.Margin = new System.Windows.Forms.Padding(2);
+            this.inscription.Name = "inscription";
+            this.inscription.Size = new System.Drawing.Size(98, 21);
+            this.inscription.TabIndex = 4;
+            this.inscription.Text = "S\'inscrire";
+            this.inscription.UseVisualStyleBackColor = true;
+            this.inscription.Click += new System.EventHandler(this.inscription_Click);
+            // 
+            // passwordInscription
+            // 
+            this.passwordInscription.Location = new System.Drawing.Point(120, 70);
+            this.passwordInscription.Margin = new System.Windows.Forms.Padding(2);
+            this.passwordInscription.Name = "passwordInscription";
+            this.passwordInscription.Size = new System.Drawing.Size(100, 20);
+            this.passwordInscription.TabIndex = 3;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(164, 52);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(136, 55);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(101, 17);
+            this.label2.Size = new System.Drawing.Size(77, 13);
             this.label2.TabIndex = 2;
             this.label2.Text = "Mot de passe :";
             // 
             // usernameInscription
             // 
-            this.usernameInscription.Location = new System.Drawing.Point(155, 23);
-            this.usernameInscription.Margin = new System.Windows.Forms.Padding(4);
+            this.usernameInscription.Location = new System.Drawing.Point(120, 19);
             this.usernameInscription.Name = "usernameInscription";
-            this.usernameInscription.Size = new System.Drawing.Size(132, 22);
+            this.usernameInscription.Size = new System.Drawing.Size(100, 20);
             this.usernameInscription.TabIndex = 1;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(164, 4);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(123, 3);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(121, 17);
+            this.label1.Size = new System.Drawing.Size(90, 13);
             this.label1.TabIndex = 0;
             this.label1.Text = "Nom d\'utilisateur :";
             // 
             // MainWindow
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(428, 197);
+            this.ClientSize = new System.Drawing.Size(321, 213);
             this.Controls.Add(this.conInscrTabControl);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "MainWindow";
-            this.Text = "Connexion";
+            this.Text = "Projet IHM 2015-2016";
             this.conInscrTabControl.ResumeLayout(false);
             this.connexionTabPage.ResumeLayout(false);
             this.connexionTabPage.PerformLayout();
@@ -215,7 +251,11 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox usernameInscription;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox passwordInscription;
+        private System.Windows.Forms.Button inscription;
+        private System.Windows.Forms.TextBox confirmPassword;
+        private System.Windows.Forms.Label errorPassword;
+        private System.Windows.Forms.Label errorUsername;
+        private System.Windows.Forms.Label label3;
     }
 }

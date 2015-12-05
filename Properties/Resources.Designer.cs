@@ -59,23 +59,5 @@ namespace Main_project_VERON_MERLIN.Properties {
                 resourceCulture = value;
             }
         }
-        
-        /// <summary>
-        ///   Recherche une chaîne localisée semblable à 0.
-        /// </summary>
-        internal static string admin {
-            get {
-                return ResourceManager.GetString("admin", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Recherche une chaîne localisée semblable à .
-        /// </summary>
-        internal static string username {
-            get {
-                return ResourceManager.GetString("username", resourceCulture);
-            }
-        }
     }
 }

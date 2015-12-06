@@ -46,7 +46,13 @@
             this.supprimerUneSaisonToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.supprimerUnÉpisodeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.supprimerUnMédiaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.suiviListe = new System.Windows.Forms.ListBox();
+            this.serieListe = new System.Windows.Forms.ListBox();
             this.menuStrip1.SuspendLayout();
+            this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -58,7 +64,7 @@
             this.supprimerToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(284, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(421, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -74,14 +80,14 @@
             // déconnexionToolStripMenuItem
             // 
             this.déconnexionToolStripMenuItem.Name = "déconnexionToolStripMenuItem";
-            this.déconnexionToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.déconnexionToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
             this.déconnexionToolStripMenuItem.Text = "Déconnexion";
             this.déconnexionToolStripMenuItem.Click += new System.EventHandler(this.déconnexionToolStripMenuItem_Click);
             // 
             // quitterToolStripMenuItem
             // 
             this.quitterToolStripMenuItem.Name = "quitterToolStripMenuItem";
-            this.quitterToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.quitterToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
             this.quitterToolStripMenuItem.Text = "Quitter";
             this.quitterToolStripMenuItem.Click += new System.EventHandler(this.quitterToolStripMenuItem_Click);
             // 
@@ -189,11 +195,67 @@
             this.supprimerUnMédiaToolStripMenuItem.Size = new System.Drawing.Size(190, 22);
             this.supprimerUnMédiaToolStripMenuItem.Text = "Supprimer un média";
             // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.ColumnCount = 2;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 51.54394F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 48.45606F));
+            this.tableLayoutPanel1.Controls.Add(this.label2, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.label1, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.suiviListe, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.serieListe, 1, 1);
+            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 24);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 2;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.438819F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 91.56118F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(421, 237);
+            this.tableLayoutPanel1.TabIndex = 1;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label1.Location = new System.Drawing.Point(3, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(210, 20);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Séries suivies :";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(219, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(85, 13);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Liste des séries :";
+            // 
+            // suiviListe
+            // 
+            this.suiviListe.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.suiviListe.FormattingEnabled = true;
+            this.suiviListe.Location = new System.Drawing.Point(3, 23);
+            this.suiviListe.Name = "suiviListe";
+            this.suiviListe.Size = new System.Drawing.Size(210, 211);
+            this.suiviListe.TabIndex = 2;
+            // 
+            // serieListe
+            // 
+            this.serieListe.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.serieListe.FormattingEnabled = true;
+            this.serieListe.Location = new System.Drawing.Point(219, 23);
+            this.serieListe.Name = "serieListe";
+            this.serieListe.Size = new System.Drawing.Size(199, 211);
+            this.serieListe.TabIndex = 3;
+            // 
             // AccueilUser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 261);
+            this.ClientSize = new System.Drawing.Size(421, 261);
+            this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "AccueilUser";
@@ -201,6 +263,8 @@
             this.Load += new System.EventHandler(this.AcceuilUser_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            this.tableLayoutPanel1.ResumeLayout(false);
+            this.tableLayoutPanel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -226,5 +290,10 @@
         private System.Windows.Forms.ToolStripMenuItem supprimerUneSaisonToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem supprimerUnÉpisodeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem supprimerUnMédiaToolStripMenuItem;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ListBox suiviListe;
+        private System.Windows.Forms.ListBox serieListe;
     }
 }

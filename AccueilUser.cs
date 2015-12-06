@@ -14,11 +14,29 @@ namespace Main_project_VERON_MERLIN
     public partial class AccueilUser : Form
     {
         private ConnexionOracle bdd;
+        private DataSet ds;
+        private string commande;
 
         public AccueilUser()
         {
             InitializeComponent();
             bdd = new ConnexionOracle();
+
+            commande = $"SELECT NOMSERIE FROM PROJET_IHM_SUIVI_SERIE WHERE NOMUTILISATEUR='{Properties.Settings.Default.username}' ORDER BY NOMSERIE";
+            ds = bdd.Select(commande);
+
+            foreach (DataRow r in ds.Tables["Data"].Rows)
+            {
+                suiviListe.Items.Add((string)r["NOMSERIE"]);
+            }
+
+            commande = $"SELECT NOM FROM PROJET_IHM_SERIE ORDER BY NOM";
+            ds = bdd.Select(commande);
+
+            foreach (DataRow r in ds.Tables["Data"].Rows)
+            {
+                serieListe.Items.Add((string)r["NOM"]);
+            }
         }
 
         private void AcceuilUser_Load(object sender, EventArgs e)

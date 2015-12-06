@@ -51,7 +51,16 @@ namespace Main_project_VERON_MERLIN
                 AccueilUser acceuil = new AccueilUser();
                 acceuil.ShowDialog();
 
-                this.Visible = true;//affichage de la connexion après fermeture de l'accueil
+                //capture de l'erreur d'accès à une ressource indisponible
+                //erreur qui à lieu quand l'ordre de fermeture est lancé depuis l'accueil utilisateur
+                try
+                {
+                    this.Visible = true;//affichage de la connexion après fermeture de l'accueil
+                }
+                catch(Exception ex)
+                {
+                    Trace.WriteLine(ex.Message);
+                }
             }
             else
             {
@@ -68,13 +77,13 @@ namespace Main_project_VERON_MERLIN
 
             if (usernameInscription.Text != string.Empty)
             {
-                string commande = $"SELECT * FROM PROJET_IHM_USERS WHERE USERNAME = '{usernameInscription.Text}' ";
+                string commande = $"SELECT * FROM PROJET_IHM_USERS WHERE USERNAME = '{usernameInscription.Text}'";
                 DataSet ds = bdd.Select(commande);
 
                 if (ds.Tables["Data"].Rows.Count != 0)
                 {
                     errorUsername.Visible = true;
-                    Trace.WriteLine("-- Inscription : username déjà utilisé");
+                    Trace.WriteLine("-- Inscription : erreur - username déjà utilisé");
                 }
 
                 if (passwordInscription.Text != string.Empty && confirmPassword.Text != string.Empty)
@@ -82,7 +91,7 @@ namespace Main_project_VERON_MERLIN
                     if (passwordInscription.Text != confirmPassword.Text)
                     {
                         errorPassword.Visible = true;
-                        Trace.WriteLine("-- Inscription : password non identiques");
+                        Trace.WriteLine("-- Inscription : erreur - password non identiques");
                     }
                     else
                     {

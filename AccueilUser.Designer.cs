@@ -74,14 +74,14 @@
             // déconnexionToolStripMenuItem
             // 
             this.déconnexionToolStripMenuItem.Name = "déconnexionToolStripMenuItem";
-            this.déconnexionToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
+            this.déconnexionToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.déconnexionToolStripMenuItem.Text = "Déconnexion";
             this.déconnexionToolStripMenuItem.Click += new System.EventHandler(this.déconnexionToolStripMenuItem_Click);
             // 
             // quitterToolStripMenuItem
             // 
             this.quitterToolStripMenuItem.Name = "quitterToolStripMenuItem";
-            this.quitterToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
+            this.quitterToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.quitterToolStripMenuItem.Text = "Quitter";
             this.quitterToolStripMenuItem.Click += new System.EventHandler(this.quitterToolStripMenuItem_Click);
             // 
@@ -116,6 +116,7 @@
             this.ajouterUnEpisodeToolStripMenuItem.Name = "ajouterUnEpisodeToolStripMenuItem";
             this.ajouterUnEpisodeToolStripMenuItem.Size = new System.Drawing.Size(174, 22);
             this.ajouterUnEpisodeToolStripMenuItem.Text = "Ajouter un épisode";
+            this.ajouterUnEpisodeToolStripMenuItem.Click += new System.EventHandler(this.ajouterUnEpisodeToolStripMenuItem_Click);
             // 
             // ajouterUnMédiaToolStripMenuItem
             // 

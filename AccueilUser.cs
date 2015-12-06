@@ -64,5 +64,12 @@ namespace Main_project_VERON_MERLIN
             AjoutSaison ajoutS = new AjoutSaison();
             ajoutS.ShowDialog();
         }
+
+        private void ajouterUnEpisodeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Trace.WriteLine("-- Accueil Utilisateur -> Ajout épisode");
+            AjoutEpisode ajoutE = new AjoutEpisode();
+            ajoutE.ShowDialog();
+        }
     }
 }

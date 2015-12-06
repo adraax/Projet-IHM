@@ -73,6 +73,12 @@
     <Compile Include="AccueilUser.Designer.cs">
       <DependentUpon>AccueilUser.cs</DependentUpon>
     </Compile>
+    <Compile Include="AjoutSaison.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AjoutSaison.Designer.cs">
+      <DependentUpon>AjoutSaison.cs</DependentUpon>
+    </Compile>
     <Compile Include="AjoutSerie.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -90,6 +96,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="AccueilUser.resx">
       <DependentUpon>AccueilUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AjoutSaison.resx">
+      <DependentUpon>AjoutSaison.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AjoutSerie.resx">
       <DependentUpon>AjoutSerie.cs</DependentUpon>

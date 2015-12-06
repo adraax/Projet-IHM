@@ -26,7 +26,11 @@ namespace Main_project_VERON_MERLIN
             this.Text = $"Accueil {Properties.Settings.Default.username}";
 
             if (Properties.Settings.Default.admin)
-                administrationToolStripMenuItem.Visible = true;
+            {
+                ajouterToolStripMenuItem.Visible = true;
+                modifierToolStripMenuItem.Visible = true;
+                supprimerToolStripMenuItem.Visible = true;
+            }
         }
 
         private void quitterToolStripMenuItem_Click(object sender, EventArgs e)
@@ -51,6 +55,13 @@ namespace Main_project_VERON_MERLIN
         {
             Trace.WriteLine("-- Accueil Utilisateur -> Ajout série");
             AjoutSerie ajoutS = new AjoutSerie();
+            ajoutS.ShowDialog();
+        }
+
+        private void ajouterUneSaisonToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Trace.WriteLine("-- Accueil Utilisateur -> Ajout saison");
+            AjoutSaison ajoutS = new AjoutSaison();
             ajoutS.ShowDialog();
         }
     }

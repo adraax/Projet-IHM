@@ -71,12 +71,41 @@ namespace Main_project_VERON_MERLIN
                 listeEpisode.Items.Remove($"Épisode {num}");
             }
 
+            episodeLabel.Visible = true;
             listeEpisode.Visible = true;
         }
 
         private void listeEpisode_SelectedIndexChanged(object sender, EventArgs e)
         {
+            labelNom.Visible = true;
+            nomEpisode.Visible = true;
+            labelSynopsis.Visible = true;
+            synopsisEpisode.Visible = true;
+            ajouterEpisode.Visible = true;
+        }
 
+        private void ajouterEpisode_Click(object sender, EventArgs e)
+        {
+            //série
+            string serie = listeSerie.Items[listeSerie.SelectedIndex].ToString();
+            //saison
+            string saison = listeSaison.Items[listeSaison.SelectedIndex].ToString();
+            string numSaison = saison.Substring(saison.Length - 1);
+            decimal noSaison = decimal.Parse(numSaison);
+            //épisode
+            string episode = listeEpisode.Items[listeEpisode.SelectedIndex].ToString();
+            string numEpisode = episode.Substring(episode.Length - 1);
+            decimal noEpisode = decimal.Parse(numEpisode);
+
+            nomEpisode.Text = nomEpisode.Text.Replace("'", "''");
+            synopsisEpisode.Text = synopsisEpisode.Text.Replace("'", "''");
+
+            Trace.WriteLine($"-- Ajout Épisode : ajout de l'épisode {noEpisode} à la saison {noSaison} de la série {serie}");
+
+            commande = $"INSERT INTO PROJET_IHM_EPISODE VALUES('{serie}', {noSaison}, {noEpisode}, '{synopsisEpisode}', '{nomEpisode}')";
+            bdd.Insert(commande);
+
+            this.Dispose();
         }
     }
 }

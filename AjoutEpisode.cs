@@ -102,7 +102,7 @@ namespace Main_project_VERON_MERLIN
 
             Trace.WriteLine($"-- Ajout Épisode : ajout de l'épisode {noEpisode} à la saison {noSaison} de la série {serie}");
 
-            commande = $"INSERT INTO PROJET_IHM_EPISODE VALUES('{serie}', {noSaison}, {noEpisode}, '{synopsisEpisode}', '{nomEpisode}')";
+            commande = $"INSERT INTO PROJET_IHM_EPISODE VALUES('{serie}', {noSaison}, {noEpisode}, '{synopsisEpisode.Text}', '{nomEpisode.Text}')";
             bdd.Insert(commande);
 
             this.Dispose();

@@ -124,6 +124,9 @@
     <EmbeddedResource Include="AjoutSerie.resx">
       <DependentUpon>AjoutSerie.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FicheSaison.resx">
+      <DependentUpon>FicheSaison.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FicheSerie.resx">
       <DependentUpon>FicheSerie.cs</DependentUpon>
     </EmbeddedResource>

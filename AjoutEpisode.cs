@@ -32,18 +32,18 @@ namespace Main_project_VERON_MERLIN
         private void listeSerie_SelectedIndexChanged(object sender, EventArgs e)
         {
             string serie = listeSerie.Items[listeSerie.SelectedIndex].ToString();
-            Trace.WriteLine($"-- Ajout épisode : série {serie} selectionnée");
+            Trace.WriteLine(string.Format("-- Ajout épisode : série {0} selectionnée", serie));
             saisonLabel.Visible = true;
 
             listeSaison.Items.Clear();
 
-            commande = $"SELECT NUMEROSAISON FROM PROJET_IHM_SAISON WHERE NOMSERIE='{serie}'";
+            commande = string.Format("SELECT NUMEROSAISON FROM PROJET_IHM_SAISON WHERE NOMSERIE='{0}'", serie);
             DataSet ds = bdd.Select(commande);
 
             foreach (DataRow r in ds.Tables["Data"].Rows)
             {
                 decimal num = (decimal)r["NUMEROSAISON"];
-                listeSaison.Items.Add($"Saison {num}");
+                listeSaison.Items.Add(string.Format("Saison {0}", num));
             }
 
             listeSaison.Visible = true;
@@ -56,19 +56,19 @@ namespace Main_project_VERON_MERLIN
             string numSaison = saison.Substring(saison.Length - 1);
             decimal noSaison = decimal.Parse(numSaison);
 
-            Trace.WriteLine($"-- Ajout épisode : saison {noSaison} selectionnée");
+            Trace.WriteLine(string.Format("-- Ajout épisode : saison {0} selectionnée", noSaison));
 
             listeEpisode.Items.Clear();
             for (int i = 1; i <= 30; i++)
-                listeEpisode.Items.Add($"Épisode {i}");
+                listeEpisode.Items.Add(string.Format("Épisode {0}", i));
 
-            commande = $"SELECT NUMEPISODE FROM PROJET_IHM_EPISODE WHERE NOMSERIE='{serie}' AND NUMEROSAISON={noSaison}";
+            commande = string.Format("SELECT NUMEPISODE FROM PROJET_IHM_EPISODE WHERE NOMSERIE='{0}' AND NUMEROSAISON={1}", serie, noSaison);
             DataSet ds = bdd.Select(commande);
 
             foreach (DataRow r in ds.Tables["Data"].Rows)
             {
                 decimal num = (decimal)r["NUMEPISODE"];
-                listeEpisode.Items.Remove($"Épisode {num}");
+                listeEpisode.Items.Remove(string.Format("Épisode {0}", num));
             }
 
             episodeLabel.Visible = true;
@@ -100,9 +100,9 @@ namespace Main_project_VERON_MERLIN
             nomEpisode.Text = nomEpisode.Text.Replace("'", "''");
             synopsisEpisode.Text = synopsisEpisode.Text.Replace("'", "''");
 
-            Trace.WriteLine($"-- Ajout Épisode : ajout de l'épisode {noEpisode} à la saison {noSaison} de la série {serie}");
+            Trace.WriteLine(string.Format("-- Ajout Épisode : ajout de l'épisode {0} à la saison {1} de la série {2}", noEpisode, noSaison, serie));
 
-            commande = $"INSERT INTO PROJET_IHM_EPISODE VALUES('{serie}', {noSaison}, {noEpisode}, '{synopsisEpisode.Text}', '{nomEpisode.Text}')";
+            commande = string.Format("INSERT INTO PROJET_IHM_EPISODE VALUES('{0}', {1}, {2}, '{3}', '{4}')", serie, noSaison, noEpisode, synopsisEpisode.Text, nomEpisode.Text);
             bdd.Insert(commande);
 
             this.Dispose();

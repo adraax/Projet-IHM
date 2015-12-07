@@ -19,7 +19,7 @@ namespace Main_project_VERON_MERLIN
 
         private void FicheSaison_Load(object sender, EventArgs e)
         {
-            this.Text = $"Fiche saison {Properties.Settings.Default.saison} - {Properties.Settings.Default.serie}";
+            this.Text = string.Format("Fiche saison {0} - {1}", Properties.Settings.Default.saison, Properties.Settings.Default.serie);
         }
     }
 }

@@ -19,7 +19,7 @@ namespace Main_project_VERON_MERLIN
         public ConnexionOracle()
         {
             connec = new OracleConnection();
-            connec.ConnectionString = "User Id=om141055; Password=om141055; Data Source=//ufrsciencestech.u-bourgogne.fr:25559/ense2015";
+            connec.ConnectionString = string.Format("User Id=om141055; Password=om141055; Data Source=//{0}", Properties.Settings.Default.connexion);
             dbpf = DbProviderFactories.GetFactory("Oracle.DataAccess.Client");
             connec.Open();
 
@@ -46,7 +46,7 @@ namespace Main_project_VERON_MERLIN
             }
             catch(Exception e)
             {
-                Trace.WriteLine($"Erreur Insert : {e.Message}");
+                Trace.WriteLine(string.Format("Erreur Insert : {0}", e.Message));
             }
 
         }
@@ -61,7 +61,7 @@ namespace Main_project_VERON_MERLIN
             }
             catch (Exception e)
             {
-                Trace.WriteLine($"Erreur Update : {e.Message}");
+                Trace.WriteLine(string.Format("Erreur Update : {0}", e.Message));
             }
 
         }
@@ -76,7 +76,7 @@ namespace Main_project_VERON_MERLIN
             }
             catch (Exception e)
             {
-                Trace.WriteLine($"Erreur Delete : {e.Message}");
+                Trace.WriteLine(string.Format("Erreur Delete : {0}", e.Message));
             }
 
         }

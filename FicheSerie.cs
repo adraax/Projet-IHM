@@ -24,25 +24,25 @@ namespace Main_project_VERON_MERLIN
 
         private void FicheSerie_Load(object sender, EventArgs e)
         {
-            this.Text = $"Fiche {Properties.Settings.Default.serie}";
+            this.Text = string.Format("Fiche {0}", Properties.Settings.Default.serie);
             nomSerie.Text = Properties.Settings.Default.serie;
 
-            commande = $"SELECT SYNOPSIS FROM PROJET_IHM_SERIE WHERE NOM='{Properties.Settings.Default.serie}'";
+            commande = string.Format("SELECT SYNOPSIS FROM PROJET_IHM_SERIE WHERE NOM='{0}'", Properties.Settings.Default.serie);
             ds = bdd.Select(commande);
 
             synopsisSerie.Text = (string)ds.Tables["Data"].Rows[0]["SYNOPSIS"];
 
-            commande = $"SELECT NUMEROSAISON FROM PROJET_IHM_SAISON WHERE NOMSERIE='{Properties.Settings.Default.serie}'";
+            commande = string.Format("SELECT NUMEROSAISON FROM PROJET_IHM_SAISON WHERE NOMSERIE='{0}'", Properties.Settings.Default.serie);
             ds = bdd.Select(commande);
 
             listeSaison.Items.Clear();
             foreach (DataRow r in ds.Tables["Data"].Rows)
             {
-                string saison = $"Saison {(decimal)r["NUMEROSAISON"]}";
+                string saison = string.Format("Saison {0}", (decimal)r["NUMEROSAISON"]);
                 listeSaison.Items.Add(saison);
             }
 
-            commande = $"SELECT * FROM PROJET_IHM_SUIVI_SERIE WHERE NOMSERIE='{Properties.Settings.Default.serie}' AND NOMUTILISATEUR='{Properties.Settings.Default.username}'";
+            commande = string.Format("SELECT * FROM PROJET_IHM_SUIVI_SERIE WHERE NOMSERIE='{0}' AND NOMUTILISATEUR='{1}'", Properties.Settings.Default.serie, Properties.Settings.Default.username);
             ds = bdd.Select(commande);
 
             if(ds.Tables["Data"].Rows.Count == 0)
@@ -75,7 +75,7 @@ namespace Main_project_VERON_MERLIN
         {
             if(Properties.Settings.Default.suivi)
             {
-                commande = $"DELETE FROM PROJET_IHM_SUIVI_SERIE WHERE NOMSERIE='{Properties.Settings.Default.serie}' AND NOMUTILISATEUR='{Properties.Settings.Default.username}'";
+                commande = string.Format("DELETE FROM PROJET_IHM_SUIVI_SERIE WHERE NOMSERIE='{0}' AND NOMUTILISATEUR='{1}'", Properties.Settings.Default.serie, Properties.Settings.Default.username);
                 bdd.Delete(commande);
 
                 Properties.Settings.Default.suivi = false;
@@ -84,7 +84,7 @@ namespace Main_project_VERON_MERLIN
             }
             else
             {
-                commande = $"INSERT INTO PROJET_IHM_SUIVI_SERIE VALUES('{Properties.Settings.Default.serie}', '{Properties.Settings.Default.username}')";
+                commande = string.Format("INSERT INTO PROJET_IHM_SUIVI_SERIE VALUES('{0}', '{1}')", Properties.Settings.Default.serie, Properties.Settings.Default.username);
                 bdd.Insert(commande);
 
                 Properties.Settings.Default.suivi = true;

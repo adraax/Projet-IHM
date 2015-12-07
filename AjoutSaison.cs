@@ -36,27 +36,27 @@ namespace Main_project_VERON_MERLIN
             string numSaison = saison.Substring(saison.Length - 1);
             decimal noSaison = decimal.Parse(numSaison);
 
-            Trace.WriteLine($"-- Ajout saison : saison {noSaison} selectionnée");
+            Trace.WriteLine(string.Format("-- Ajout saison : saison {0} selectionnée", noSaison));
             ajouterSaison.Visible = true;
         }
 
         private void listeSerie_SelectedIndexChanged(object sender, EventArgs e)
         {
             string serie = listeSerie.Items[listeSerie.SelectedIndex].ToString();
-            Trace.WriteLine($"-- Ajout saison : série {serie} selectionnée");
+            Trace.WriteLine(string.Format("-- Ajout saison : série {0} selectionnée", serie));
             saisonLabel.Visible = true;
 
             listeSaison.Items.Clear();
             for (int i = 1; i <= 10; i++)
-                listeSaison.Items.Add($"Saison {i}");
+                listeSaison.Items.Add(string.Format("Saison {0}", i));
 
-            commande = $"SELECT NUMEROSAISON FROM PROJET_IHM_SAISON WHERE NOMSERIE='{serie}'";
+            commande = string.Format("SELECT NUMEROSAISON FROM PROJET_IHM_SAISON WHERE NOMSERIE='{0}'", serie);
             DataSet ds = bdd.Select(commande);
 
             foreach(DataRow r in ds.Tables["Data"].Rows)
             {
                 decimal num = (decimal)r["NUMEROSAISON"];
-                listeSaison.Items.Remove($"Saison {num}");
+                listeSaison.Items.Remove(string.Format("Saison {0}", num));
             }
 
             listeSaison.Visible = true;
@@ -69,9 +69,9 @@ namespace Main_project_VERON_MERLIN
             string numSaison = saison.Substring(saison.Length - 1);
             decimal noSaison = decimal.Parse(numSaison);
 
-            Trace.WriteLine($"-- Ajout Saison : ajout de la saison {noSaison} à la série {serie}");
+            Trace.WriteLine(string.Format("-- Ajout Saison : ajout de la saison {0} à la série {1}", noSaison, serie));
 
-            commande = $"INSERT INTO PROJET_IHM_SAISON VALUES('{serie}', {noSaison})";
+            commande = string.Format("INSERT INTO PROJET_IHM_SAISON VALUES('{0}', {1})", serie, noSaison);
             bdd.Insert(commande);
 
             this.Dispose();

@@ -31,7 +31,8 @@ namespace Main_project_VERON_MERLIN
         private void connexion_Click(object sender, EventArgs e)
         {
             errorConnexion.Visible = false;
-            string commande = $"SELECT * FROM PROJET_IHM_USERS WHERE USERNAME = '{usernameConnexion.Text}' AND PASSWORD = '{passwordConnexion.Text}'";
+            string commande = string.Format("SELECT * FROM PROJET_IHM_USERS WHERE USERNAME = '{0}' AND PASSWORD = '{1}'", usernameConnexion.Text, passwordConnexion.Text
+                );
             DataSet ds = bdd.Select(commande);
 
 
@@ -77,7 +78,7 @@ namespace Main_project_VERON_MERLIN
 
             if (usernameInscription.Text != string.Empty)
             {
-                string commande = $"SELECT * FROM PROJET_IHM_USERS WHERE USERNAME = '{usernameInscription.Text}'";
+                string commande = string.Format("SELECT * FROM PROJET_IHM_USERS WHERE USERNAME = '{0}'", usernameInscription.Text);
                 DataSet ds = bdd.Select(commande);
 
                 if (ds.Tables["Data"].Rows.Count != 0)
@@ -95,7 +96,7 @@ namespace Main_project_VERON_MERLIN
                     }
                     else
                     {
-                        commande = $"INSERT INTO PROJET_IHM_USERS VALUES('{usernameInscription.Text}', '{passwordInscription.Text}', '0')";
+                        commande = string.Format("INSERT INTO PROJET_IHM_USERS VALUES('{0}', '{1}', '0')", usernameInscription.Text, passwordInscription.Text);
                         bdd.Insert(commande);
                         inscriptionOk.Visible = true;
                         Trace.WriteLine("-- Inscription réussie");

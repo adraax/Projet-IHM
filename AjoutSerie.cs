@@ -26,7 +26,7 @@ namespace Main_project_VERON_MERLIN
             if (nomSerie.Text != string.Empty)
             {
                 nomSerie.Text = nomSerie.Text.Replace("'", "''");
-                string commande = $"SELECT * FROM PROJET_IHM_SERIE WHERE NOM='{nomSerie.Text}'";
+                string commande = string.Format("SELECT * FROM PROJET_IHM_SERIE WHERE NOM='{0}'", nomSerie.Text);
                 DataSet ds = bdd.Select(commande);
 
                 if (ds.Tables["Data"].Rows.Count != 0)
@@ -37,7 +37,7 @@ namespace Main_project_VERON_MERLIN
                 else
                 {
                     synopsisSerie.Text = synopsisSerie.Text.Replace("'", "''");
-                    commande = $"INSERT INTO PROJET_IHM_SERIE VALUES('{nomSerie.Text}', '{synopsisSerie.Text}')";
+                    commande = string.Format("INSERT INTO PROJET_IHM_SERIE VALUES('{0}', '{1}')", nomSerie.Text, synopsisSerie.Text);
                     bdd.Insert(commande);
                     Trace.WriteLine("-- Ajout série réussi");
                     this.Dispose();

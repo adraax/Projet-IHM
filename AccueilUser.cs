@@ -27,7 +27,7 @@ namespace Main_project_VERON_MERLIN
         {
             suiviListe.Items.Clear();
 
-            commande = $"SELECT NOMSERIE FROM PROJET_IHM_SUIVI_SERIE WHERE NOMUTILISATEUR='{Properties.Settings.Default.username}' ORDER BY NOMSERIE";
+            commande = string.Format("SELECT NOMSERIE FROM PROJET_IHM_SUIVI_SERIE WHERE NOMUTILISATEUR='{0}' ORDER BY NOMSERIE", Properties.Settings.Default.username);
             ds = bdd.Select(commande);
 
             foreach (DataRow r in ds.Tables["Data"].Rows)
@@ -37,7 +37,7 @@ namespace Main_project_VERON_MERLIN
 
             serieListe.Items.Clear();
 
-            commande = $"SELECT NOM FROM PROJET_IHM_SERIE ORDER BY NOM";
+            commande = "SELECT NOM FROM PROJET_IHM_SERIE ORDER BY NOM";
             ds = bdd.Select(commande);
 
             foreach (DataRow r in ds.Tables["Data"].Rows)
@@ -48,7 +48,7 @@ namespace Main_project_VERON_MERLIN
 
         private void AcceuilUser_Load(object sender, EventArgs e)
         {
-            this.Text = $"Accueil {Properties.Settings.Default.username}";
+            this.Text = string.Format("Accueil {0}", Properties.Settings.Default.username);
 
             if (Properties.Settings.Default.admin)
             {

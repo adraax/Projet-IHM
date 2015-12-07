@@ -92,6 +92,18 @@
       <DependentUpon>AjoutSerie.cs</DependentUpon>
     </Compile>
     <Compile Include="ConnexionOracle.cs" />
+    <Compile Include="FicheSaison.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FicheSaison.Designer.cs">
+      <DependentUpon>FicheSaison.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FicheSerie.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FicheSerie.Designer.cs">
+      <DependentUpon>FicheSerie.cs</DependentUpon>
+    </Compile>
     <Compile Include="MainWindow.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -111,6 +123,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AjoutSerie.resx">
       <DependentUpon>AjoutSerie.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FicheSerie.resx">
+      <DependentUpon>FicheSerie.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainWindow.resx">
       <DependentUpon>MainWindow.cs</DependentUpon>

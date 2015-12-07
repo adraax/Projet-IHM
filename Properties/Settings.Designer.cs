@@ -46,5 +46,53 @@ namespace Main_project_VERON_MERLIN.Properties {
                 this["admin"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string serie {
+            get {
+                return ((string)(this["serie"]));
+            }
+            set {
+                this["serie"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public decimal saison {
+            get {
+                return ((decimal)(this["saison"]));
+            }
+            set {
+                this["saison"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public decimal episode {
+            get {
+                return ((decimal)(this["episode"]));
+            }
+            set {
+                this["episode"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool suivi {
+            get {
+                return ((bool)(this["suivi"]));
+            }
+            set {
+                this["suivi"] = value;
+            }
+        }
     }
 }

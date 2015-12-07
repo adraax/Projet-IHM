@@ -47,8 +47,8 @@
             this.supprimerUnÉpisodeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.supprimerUnMédiaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.suiviListe = new System.Windows.Forms.ListBox();
             this.serieListe = new System.Windows.Forms.ListBox();
             this.menuStrip1.SuspendLayout();
@@ -213,6 +213,15 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(421, 237);
             this.tableLayoutPanel1.TabIndex = 1;
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(219, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(85, 13);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Liste des séries :";
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -223,15 +232,6 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Séries suivies :";
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(219, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(85, 13);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Liste des séries :";
-            // 
             // suiviListe
             // 
             this.suiviListe.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -240,6 +240,7 @@
             this.suiviListe.Name = "suiviListe";
             this.suiviListe.Size = new System.Drawing.Size(210, 211);
             this.suiviListe.TabIndex = 2;
+            this.suiviListe.SelectedIndexChanged += new System.EventHandler(this.suiviListe_SelectedIndexChanged);
             // 
             // serieListe
             // 
@@ -249,6 +250,7 @@
             this.serieListe.Name = "serieListe";
             this.serieListe.Size = new System.Drawing.Size(199, 211);
             this.serieListe.TabIndex = 3;
+            this.serieListe.SelectedIndexChanged += new System.EventHandler(this.serieListe_SelectedIndexChanged);
             // 
             // AccueilUser
             // 

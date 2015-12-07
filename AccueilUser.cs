@@ -21,6 +21,11 @@ namespace Main_project_VERON_MERLIN
         {
             InitializeComponent();
             bdd = new ConnexionOracle();
+        }
+
+        private void RemplissageListe()
+        {
+            suiviListe.Items.Clear();
 
             commande = $"SELECT NOMSERIE FROM PROJET_IHM_SUIVI_SERIE WHERE NOMUTILISATEUR='{Properties.Settings.Default.username}' ORDER BY NOMSERIE";
             ds = bdd.Select(commande);
@@ -29,6 +34,8 @@ namespace Main_project_VERON_MERLIN
             {
                 suiviListe.Items.Add((string)r["NOMSERIE"]);
             }
+
+            serieListe.Items.Clear();
 
             commande = $"SELECT NOM FROM PROJET_IHM_SERIE ORDER BY NOM";
             ds = bdd.Select(commande);
@@ -49,6 +56,8 @@ namespace Main_project_VERON_MERLIN
                 modifierToolStripMenuItem.Visible = true;
                 supprimerToolStripMenuItem.Visible = true;
             }
+
+            RemplissageListe();
         }
 
         private void quitterToolStripMenuItem_Click(object sender, EventArgs e)
@@ -88,6 +97,36 @@ namespace Main_project_VERON_MERLIN
             Trace.WriteLine("-- Accueil Utilisateur -> Ajout épisode");
             AjoutEpisode ajoutE = new AjoutEpisode();
             ajoutE.ShowDialog();
+        }
+
+        private void serieListe_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (serieListe.SelectedIndex != -1)
+            {
+                string serie = serieListe.SelectedItem.ToString();
+                Properties.Settings.Default.serie = serie;
+                Properties.Settings.Default.Save();
+
+                FicheSerie f = new FicheSerie();
+                f.ShowDialog();
+
+                RemplissageListe();
+            }
+        }
+
+        private void suiviListe_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (suiviListe.SelectedIndex != -1)
+            {
+                string serie = suiviListe.SelectedItem.ToString();
+                Properties.Settings.Default.serie = serie;
+                Properties.Settings.Default.Save();
+
+                FicheSerie f = new FicheSerie();
+                f.ShowDialog();
+
+                RemplissageListe();
+            }
         }
     }
 }

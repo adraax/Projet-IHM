@@ -16,7 +16,7 @@ namespace Main_project_VERON_MERLIN
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MainWindow());
+            Application.Run(new SelectionConnexion());
         }
     }
 }

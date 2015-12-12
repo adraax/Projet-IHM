@@ -16,6 +16,7 @@ namespace Main_project_VERON_MERLIN
         private string commande;
         private ConnexionOracle bdd;
         private DataSet ds;
+        private Image image;
         public FicheSerie()
         {
             InitializeComponent();
@@ -45,7 +46,7 @@ namespace Main_project_VERON_MERLIN
             commande = string.Format("SELECT * FROM PROJET_IHM_SUIVI_SERIE WHERE NOMSERIE='{0}' AND NOMUTILISATEUR='{1}'", Properties.Settings.Default.serie, Properties.Settings.Default.username);
             ds = bdd.Select(commande);
 
-            if(ds.Tables["Data"].Rows.Count == 0)
+            if (ds.Tables["Data"].Rows.Count == 0)
             {
                 Properties.Settings.Default.suivi = false;
                 Properties.Settings.Default.Save();
@@ -55,6 +56,13 @@ namespace Main_project_VERON_MERLIN
                 Properties.Settings.Default.suivi = true;
                 Properties.Settings.Default.Save();
                 suiviButton.Text = "Ne plus suivre la série";
+            }
+
+            commande = string.Format("SELECT CHEMIN FROM PROJET_IHM_MEDIA WHERE NOMSERIE='{0}' AND TYPE='Image'", Properties.Settings.Default.serie);
+            ds = bdd.Select(commande);
+            if (ds.Tables["Data"].Rows.Count > 0)
+            {
+                image = Image.FromFile(ds.Tables["Data"].Rows[0]["CHEMIN"].ToString(), true);
             }
         }
 
@@ -76,7 +84,7 @@ namespace Main_project_VERON_MERLIN
 
         private void suiviButton_Click(object sender, EventArgs e)
         {
-            if(Properties.Settings.Default.suivi)
+            if (Properties.Settings.Default.suivi)
             {
                 commande = string.Format("DELETE FROM PROJET_IHM_SUIVI_SERIE WHERE NOMSERIE='{0}' AND NOMUTILISATEUR='{1}'", Properties.Settings.Default.serie, Properties.Settings.Default.username);
                 bdd.Delete(commande);
@@ -93,6 +101,15 @@ namespace Main_project_VERON_MERLIN
                 Properties.Settings.Default.suivi = true;
                 Properties.Settings.Default.Save();
                 suiviButton.Text = "Ne plus suivre la série";
+            }
+        }
+
+        private void ImageBox_Paint(object sender, PaintEventArgs e)
+        {
+            if (image != null)
+            {
+                Bitmap im = new Bitmap(image, new Size(ImageBox.Size.Width, ImageBox.Size.Height));
+                ImageBox.Image = im;
             }
         }
     }

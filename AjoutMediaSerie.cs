@@ -15,6 +15,9 @@ namespace Main_project_VERON_MERLIN
         private string commande;
         private DataSet ds;
         private ConnexionOracle bdd;
+
+        private string nomFichier;
+
         public AjoutMediaSerie()
         {
             InitializeComponent();
@@ -27,12 +30,10 @@ namespace Main_project_VERON_MERLIN
             cheminTextBox.Visible = false;
             parcourir.Visible = false;
             valider.Visible = false;
+            cheminTextBox.Text = string.Empty;
 
             if (typeMedia.SelectedIndex != -1)
             {
-                Properties.Settings.Default.typeMedia = typeMedia.SelectedItem.ToString();
-                Properties.Settings.Default.Save();
-
                 cheminLabel.Visible = true;
                 cheminTextBox.Visible = true;
                 parcourir.Visible = true;
@@ -65,6 +66,51 @@ namespace Main_project_VERON_MERLIN
 
             foreach (DataRow r in ds.Tables["Data"].Rows)
                 listeSerie.Items.Add((string)r["NOM"]);
+        }
+
+        private void parcourir_Click(object sender, EventArgs e)
+        {
+            valider.Visible = false;
+            OpenFileDialog openFileDialog1 = new OpenFileDialog();
+
+            openFileDialog1.FilterIndex = 1;
+            openFileDialog1.RestoreDirectory = true;
+
+            if (typeMedia.SelectedItem.ToString() == "Image")
+            {
+                openFileDialog1.Filter = "Fichiers image(*.BMP; *.JPG; *.GIF; *.PNG)| *.BMP; *.JPG; *.GIF; *.PNG";
+            }
+            else if(typeMedia.SelectedItem.ToString() == "Son")
+            {
+                openFileDialog1.Filter = "Fichiers audio(*.MP3; *.WAV)| *.MP3; *.WAV";
+            }
+            else
+            {
+                openFileDialog1.Filter = "Fichiers vidéo(*.MP4; *.AVI)| *.MP4; *.AVI";
+            }
+
+            if(openFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                cheminTextBox.Text = openFileDialog1.FileName;
+                nomFichier = openFileDialog1.SafeFileName;
+                valider.Visible = true;
+            }
+        }
+
+        private void valider_Click(object sender, EventArgs e)
+        {
+            string targetPath = string.Format(@"Data\{0}\", listeSerie.SelectedItem.ToString().Replace("'", "''"));
+            string destFile = System.IO.Path.Combine(targetPath, nomFichier);
+            if (!System.IO.Directory.Exists(targetPath))
+            {
+                System.IO.Directory.CreateDirectory(targetPath);
+            }
+
+            System.IO.File.Copy(cheminTextBox.Text, destFile, true);
+
+            commande = string.Format("INSERT INTO PROJET_IHM_MEDIA VALUES('{0}', NULL, NULL, '{1}', '{2}')", listeSerie.SelectedItem.ToString().Replace("'", "''"), destFile, typeMedia.SelectedItem.ToString());
+            bdd.Insert(commande);
+            this.Dispose();
         }
     }
 }

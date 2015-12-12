@@ -32,21 +32,23 @@
             this.nomSerie = new System.Windows.Forms.Label();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.synopsisSerieLabel = new System.Windows.Forms.Label();
+            this.synopsisSerie = new System.Windows.Forms.RichTextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.listeSaison = new System.Windows.Forms.ListBox();
-            this.synopsisSerie = new System.Windows.Forms.RichTextBox();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.suiviButton = new System.Windows.Forms.Button();
+            this.ImageBox = new System.Windows.Forms.PictureBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ImageBox)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.ColumnCount = 2;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 44.19135F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 55.80865F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 43.34705F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 56.65295F));
             this.tableLayoutPanel1.Controls.Add(this.nomSerie, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.label1, 0, 2);
@@ -60,7 +62,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 90.03831F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 18F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 79F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(514, 426);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(729, 508);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // nomSerie
@@ -70,7 +72,7 @@
             this.nomSerie.Dock = System.Windows.Forms.DockStyle.Fill;
             this.nomSerie.Location = new System.Drawing.Point(3, 0);
             this.nomSerie.Name = "nomSerie";
-            this.nomSerie.Size = new System.Drawing.Size(508, 32);
+            this.nomSerie.Size = new System.Drawing.Size(723, 40);
             this.nomSerie.TabIndex = 0;
             this.nomSerie.Text = "label1";
             this.nomSerie.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -83,12 +85,12 @@
             this.tableLayoutPanel2.Controls.Add(this.synopsisSerieLabel, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.synopsisSerie, 0, 1);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(230, 35);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(318, 43);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 2;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.655172F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 90.34483F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(281, 290);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(408, 364);
             this.tableLayoutPanel2.TabIndex = 1;
             // 
             // synopsisSerieLabel
@@ -97,19 +99,29 @@
             this.synopsisSerieLabel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.synopsisSerieLabel.Location = new System.Drawing.Point(3, 0);
             this.synopsisSerieLabel.Name = "synopsisSerieLabel";
-            this.synopsisSerieLabel.Size = new System.Drawing.Size(275, 27);
+            this.synopsisSerieLabel.Size = new System.Drawing.Size(402, 35);
             this.synopsisSerieLabel.TabIndex = 0;
             this.synopsisSerieLabel.Text = "Synopsis :";
             this.synopsisSerieLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // synopsisSerie
+            // 
+            this.synopsisSerie.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.synopsisSerie.Location = new System.Drawing.Point(3, 38);
+            this.synopsisSerie.Name = "synopsisSerie";
+            this.synopsisSerie.ReadOnly = true;
+            this.synopsisSerie.Size = new System.Drawing.Size(402, 323);
+            this.synopsisSerie.TabIndex = 1;
+            this.synopsisSerie.Text = "";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.tableLayoutPanel1.SetColumnSpan(this.label1, 2);
             this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label1.Location = new System.Drawing.Point(3, 328);
+            this.label1.Location = new System.Drawing.Point(3, 410);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(508, 18);
+            this.label1.Size = new System.Drawing.Size(723, 18);
             this.label1.TabIndex = 2;
             this.label1.Text = "Liste des saisons :";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -119,21 +131,11 @@
             this.tableLayoutPanel1.SetColumnSpan(this.listeSaison, 2);
             this.listeSaison.Dock = System.Windows.Forms.DockStyle.Fill;
             this.listeSaison.FormattingEnabled = true;
-            this.listeSaison.Location = new System.Drawing.Point(3, 349);
+            this.listeSaison.Location = new System.Drawing.Point(3, 431);
             this.listeSaison.Name = "listeSaison";
-            this.listeSaison.Size = new System.Drawing.Size(508, 74);
+            this.listeSaison.Size = new System.Drawing.Size(723, 74);
             this.listeSaison.TabIndex = 3;
             this.listeSaison.SelectedIndexChanged += new System.EventHandler(this.listeSaison_SelectedIndexChanged);
-            // 
-            // synopsisSerie
-            // 
-            this.synopsisSerie.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.synopsisSerie.Location = new System.Drawing.Point(3, 30);
-            this.synopsisSerie.Name = "synopsisSerie";
-            this.synopsisSerie.ReadOnly = true;
-            this.synopsisSerie.Size = new System.Drawing.Size(275, 257);
-            this.synopsisSerie.TabIndex = 1;
-            this.synopsisSerie.Text = "";
             // 
             // tableLayoutPanel3
             // 
@@ -141,13 +143,14 @@
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel3.Controls.Add(this.suiviButton, 0, 0);
+            this.tableLayoutPanel3.Controls.Add(this.ImageBox, 0, 1);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 35);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 43);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 2;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.655172F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 90.34483F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(221, 290);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(309, 364);
             this.tableLayoutPanel3.TabIndex = 4;
             // 
             // suiviButton
@@ -155,17 +158,27 @@
             this.suiviButton.Dock = System.Windows.Forms.DockStyle.Fill;
             this.suiviButton.Location = new System.Drawing.Point(3, 3);
             this.suiviButton.Name = "suiviButton";
-            this.suiviButton.Size = new System.Drawing.Size(215, 21);
+            this.suiviButton.Size = new System.Drawing.Size(303, 29);
             this.suiviButton.TabIndex = 0;
             this.suiviButton.Text = "Suivre la série";
             this.suiviButton.UseVisualStyleBackColor = true;
             this.suiviButton.Click += new System.EventHandler(this.suiviButton_Click);
             // 
+            // ImageBox
+            // 
+            this.ImageBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ImageBox.Location = new System.Drawing.Point(3, 38);
+            this.ImageBox.Name = "ImageBox";
+            this.ImageBox.Size = new System.Drawing.Size(303, 323);
+            this.ImageBox.TabIndex = 1;
+            this.ImageBox.TabStop = false;
+            this.ImageBox.Paint += new System.Windows.Forms.PaintEventHandler(this.ImageBox_Paint);
+            // 
             // FicheSerie
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(514, 426);
+            this.ClientSize = new System.Drawing.Size(729, 508);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "FicheSerie";
             this.Text = "FicheSerie";
@@ -175,6 +188,7 @@
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
             this.tableLayoutPanel3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.ImageBox)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -190,5 +204,6 @@
         private System.Windows.Forms.RichTextBox synopsisSerie;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
         private System.Windows.Forms.Button suiviButton;
+        private System.Windows.Forms.PictureBox ImageBox;
     }
 }

@@ -152,6 +152,7 @@
             this.parcourir.Text = "Parcourir";
             this.parcourir.UseVisualStyleBackColor = true;
             this.parcourir.Visible = false;
+            this.parcourir.Click += new System.EventHandler(this.parcourir_Click);
             // 
             // valider
             // 
@@ -164,6 +165,7 @@
             this.valider.Text = "Ajouter";
             this.valider.UseVisualStyleBackColor = true;
             this.valider.Visible = false;
+            this.valider.Click += new System.EventHandler(this.valider_Click);
             // 
             // AjoutMediaSerie
             // 

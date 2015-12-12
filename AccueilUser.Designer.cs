@@ -51,6 +51,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.suiviListe = new System.Windows.Forms.ListBox();
             this.serieListe = new System.Windows.Forms.ListBox();
+            this.surUneSérieToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.surUnÉpisodeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
@@ -126,9 +128,13 @@
             // 
             // ajouterUnMédiaToolStripMenuItem
             // 
+            this.ajouterUnMédiaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.surUneSérieToolStripMenuItem,
+            this.surUnÉpisodeToolStripMenuItem});
             this.ajouterUnMédiaToolStripMenuItem.Name = "ajouterUnMédiaToolStripMenuItem";
             this.ajouterUnMédiaToolStripMenuItem.Size = new System.Drawing.Size(174, 22);
             this.ajouterUnMédiaToolStripMenuItem.Text = "Ajouter un média";
+            this.ajouterUnMédiaToolStripMenuItem.Click += new System.EventHandler(this.ajouterUnMédiaToolStripMenuItem_Click);
             // 
             // modifierToolStripMenuItem
             // 
@@ -252,6 +258,19 @@
             this.serieListe.TabIndex = 3;
             this.serieListe.SelectedIndexChanged += new System.EventHandler(this.serieListe_SelectedIndexChanged);
             // 
+            // surUneSérieToolStripMenuItem
+            // 
+            this.surUneSérieToolStripMenuItem.Name = "surUneSérieToolStripMenuItem";
+            this.surUneSérieToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.surUneSérieToolStripMenuItem.Text = "Sur une série";
+            this.surUneSérieToolStripMenuItem.Click += new System.EventHandler(this.surUneSérieToolStripMenuItem_Click);
+            // 
+            // surUnÉpisodeToolStripMenuItem
+            // 
+            this.surUnÉpisodeToolStripMenuItem.Name = "surUnÉpisodeToolStripMenuItem";
+            this.surUnÉpisodeToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.surUnÉpisodeToolStripMenuItem.Text = "Sur un épisode";
+            // 
             // AccueilUser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -297,5 +316,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ListBox suiviListe;
         private System.Windows.Forms.ListBox serieListe;
+        private System.Windows.Forms.ToolStripMenuItem surUneSérieToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem surUnÉpisodeToolStripMenuItem;
     }
 }

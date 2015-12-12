@@ -128,5 +128,16 @@ namespace Main_project_VERON_MERLIN
                 RemplissageListe();
             }
         }
+
+        private void ajouterUnMédiaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            System.IO.Directory.CreateDirectory("Data");
+        }
+
+        private void surUneSérieToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AjoutMediaSerie a = new AjoutMediaSerie();
+            a.ShowDialog();
+        }
     }
 }

@@ -49,11 +49,11 @@
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 4;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 47.16981F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 52.83019F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 196F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 42.55319F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 57.44681F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 283F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(284, 278);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(451, 356);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // nomEpisode
@@ -62,7 +62,7 @@
             this.nomEpisode.Dock = System.Windows.Forms.DockStyle.Fill;
             this.nomEpisode.Location = new System.Drawing.Point(3, 0);
             this.nomEpisode.Name = "nomEpisode";
-            this.nomEpisode.Size = new System.Drawing.Size(278, 26);
+            this.nomEpisode.Size = new System.Drawing.Size(445, 20);
             this.nomEpisode.TabIndex = 0;
             this.nomEpisode.Text = "label1";
             this.nomEpisode.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -71,9 +71,9 @@
             // 
             this.labelSynopsis.AutoSize = true;
             this.labelSynopsis.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.labelSynopsis.Location = new System.Drawing.Point(3, 26);
+            this.labelSynopsis.Location = new System.Drawing.Point(3, 20);
             this.labelSynopsis.Name = "labelSynopsis";
-            this.labelSynopsis.Size = new System.Drawing.Size(278, 30);
+            this.labelSynopsis.Size = new System.Drawing.Size(445, 27);
             this.labelSynopsis.TabIndex = 1;
             this.labelSynopsis.Text = "Résumé :";
             this.labelSynopsis.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -81,18 +81,19 @@
             // synopsis
             // 
             this.synopsis.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.synopsis.Location = new System.Drawing.Point(3, 59);
+            this.synopsis.Location = new System.Drawing.Point(3, 50);
             this.synopsis.Name = "synopsis";
-            this.synopsis.Size = new System.Drawing.Size(278, 190);
+            this.synopsis.ReadOnly = true;
+            this.synopsis.Size = new System.Drawing.Size(445, 277);
             this.synopsis.TabIndex = 2;
             this.synopsis.Text = "";
             // 
             // media
             // 
             this.media.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.media.Location = new System.Drawing.Point(3, 255);
+            this.media.Location = new System.Drawing.Point(3, 333);
             this.media.Name = "media";
-            this.media.Size = new System.Drawing.Size(278, 20);
+            this.media.Size = new System.Drawing.Size(445, 20);
             this.media.TabIndex = 3;
             this.media.Text = "button1";
             this.media.UseVisualStyleBackColor = true;
@@ -101,7 +102,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 278);
+            this.ClientSize = new System.Drawing.Size(451, 356);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "FicheEpisode";
             this.Text = "FicheEpisode";

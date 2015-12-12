@@ -60,15 +60,18 @@ namespace Main_project_VERON_MERLIN
 
         private void listeSaison_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string nomSaison = listeSaison.SelectedItem.ToString();
-            string numSaison = nomSaison.Substring(nomSaison.Length - 1);
-            decimal noSaison = decimal.Parse(numSaison);
+            if (listeSaison.SelectedIndex != -1)
+            {
+                string nomSaison = listeSaison.SelectedItem.ToString();
+                string numSaison = nomSaison.Substring(nomSaison.Length - 1);
+                decimal noSaison = decimal.Parse(numSaison);
 
-            Properties.Settings.Default.saison = noSaison;
-            Properties.Settings.Default.Save();
+                Properties.Settings.Default.saison = noSaison;
+                Properties.Settings.Default.Save();
 
-            FicheSaison f = new FicheSaison();
-            f.ShowDialog();
+                FicheSaison f = new FicheSaison();
+                f.ShowDialog();
+            }
         }
 
         private void suiviButton_Click(object sender, EventArgs e)

@@ -31,7 +31,7 @@ namespace Main_project_VERON_MERLIN
 
         private void connexion_Click(object sender, EventArgs e)
         {
-            byte[] pass = System.Text.Encoding.ASCII.GetBytes(passwordInscription.Text);
+            byte[] pass = System.Text.Encoding.ASCII.GetBytes(passwordConnexion.Text);
             byte[] result;
 
             SHA512 shaM = new SHA512Managed();

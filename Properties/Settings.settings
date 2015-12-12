@@ -20,5 +20,8 @@
     <Setting Name="suivi" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>
     </Setting>
+    <Setting Name="connexion" Type="System.String" Scope="User">
+      <Value Profile="(Default)">eluard:1521/ense2015</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

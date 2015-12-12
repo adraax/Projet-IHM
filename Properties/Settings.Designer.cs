@@ -94,5 +94,17 @@ namespace Main_project_VERON_MERLIN.Properties {
                 this["suivi"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("eluard:1521/ense2015")]
+        public string connexion {
+            get {
+                return ((string)(this["connexion"]));
+            }
+            set {
+                this["connexion"] = value;
+            }
+        }
     }
 }

@@ -11,6 +11,7 @@ using System.Windows.Forms;
 using Oracle.DataAccess.Client;
 using System.Data.Common;
 using System.Diagnostics;
+using System.Security.Cryptography;
 
 namespace Main_project_VERON_MERLIN
 {
@@ -30,9 +31,15 @@ namespace Main_project_VERON_MERLIN
 
         private void connexion_Click(object sender, EventArgs e)
         {
+            byte[] pass = System.Text.Encoding.ASCII.GetBytes(passwordInscription.Text);
+            byte[] result;
+
+            SHA512 shaM = new SHA512Managed();
+            result = shaM.ComputeHash(pass);
+
+            string passHash = BitConverter.ToString(result).Replace("-", "");
             errorConnexion.Visible = false;
-            string commande = string.Format("SELECT * FROM PROJET_IHM_USERS WHERE USERNAME = '{0}' AND PASSWORD = '{1}'", usernameConnexion.Text, passwordConnexion.Text
-                );
+            string commande = string.Format("SELECT * FROM PROJET_IHM_USERS WHERE USERNAME = '{0}' AND PASSWORD = '{1}'", usernameConnexion.Text, passHash);
             DataSet ds = bdd.Select(commande);
 
 
@@ -96,7 +103,16 @@ namespace Main_project_VERON_MERLIN
                     }
                     else
                     {
-                        commande = string.Format("INSERT INTO PROJET_IHM_USERS VALUES('{0}', '{1}', '0')", usernameInscription.Text, passwordInscription.Text);
+
+                        byte[] pass = System.Text.Encoding.ASCII.GetBytes(passwordInscription.Text);
+                        byte[] result;
+
+                        SHA512 shaM = new SHA512Managed();
+                        result = shaM.ComputeHash(pass);
+
+                        string passHash = BitConverter.ToString(result).Replace("-", "");
+
+                        commande = string.Format("INSERT INTO PROJET_IHM_USERS VALUES('{0}', '{1}', '0')", usernameInscription.Text, passHash);
                         bdd.Insert(commande);
                         inscriptionOk.Visible = true;
                         Trace.WriteLine("-- Inscription réussie");

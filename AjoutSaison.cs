@@ -42,7 +42,7 @@ namespace Main_project_VERON_MERLIN
 
         private void listeSerie_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string serie = listeSerie.Items[listeSerie.SelectedIndex].ToString();
+            string serie = listeSerie.Items[listeSerie.SelectedIndex].ToString().Replace("'", "''");
             Trace.WriteLine(string.Format("-- Ajout saison : série {0} selectionnée", serie));
             saisonLabel.Visible = true;
 
@@ -64,7 +64,7 @@ namespace Main_project_VERON_MERLIN
 
         private void ajouterSaison_Click(object sender, EventArgs e)
         {
-            string serie = listeSerie.Items[listeSerie.SelectedIndex].ToString();
+            string serie = listeSerie.Items[listeSerie.SelectedIndex].ToString().Replace("'", "''");
             string saison = listeSaison.Items[listeSaison.SelectedIndex].ToString();
             string numSaison = saison.Substring(saison.Length - 1);
             decimal noSaison = decimal.Parse(numSaison);

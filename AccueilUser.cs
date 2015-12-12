@@ -83,6 +83,7 @@ namespace Main_project_VERON_MERLIN
             Trace.WriteLine("-- Accueil Utilisateur -> Ajout série");
             AjoutSerie ajoutS = new AjoutSerie();
             ajoutS.ShowDialog();
+            RemplissageListe();
         }
 
         private void ajouterUneSaisonToolStripMenuItem_Click(object sender, EventArgs e)
@@ -103,7 +104,7 @@ namespace Main_project_VERON_MERLIN
         {
             if (serieListe.SelectedIndex != -1)
             {
-                string serie = serieListe.SelectedItem.ToString();
+                string serie = serieListe.SelectedItem.ToString().Replace("'", "''");
                 Properties.Settings.Default.serie = serie;
                 Properties.Settings.Default.Save();
 
@@ -118,7 +119,7 @@ namespace Main_project_VERON_MERLIN
         {
             if (suiviListe.SelectedIndex != -1)
             {
-                string serie = suiviListe.SelectedItem.ToString();
+                string serie = suiviListe.SelectedItem.ToString().Replace("'", "''");
                 Properties.Settings.Default.serie = serie;
                 Properties.Settings.Default.Save();
 

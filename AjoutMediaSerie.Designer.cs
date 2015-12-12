@@ -88,6 +88,7 @@
             this.listeSerie.Name = "listeSerie";
             this.listeSerie.Size = new System.Drawing.Size(715, 21);
             this.listeSerie.TabIndex = 1;
+            this.listeSerie.SelectedIndexChanged += new System.EventHandler(this.listeSerie_SelectedIndexChanged);
             // 
             // typeLabel
             // 
@@ -136,6 +137,7 @@
             this.cheminTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.cheminTextBox.Location = new System.Drawing.Point(3, 96);
             this.cheminTextBox.Name = "cheminTextBox";
+            this.cheminTextBox.ReadOnly = true;
             this.cheminTextBox.Size = new System.Drawing.Size(534, 20);
             this.cheminTextBox.TabIndex = 5;
             this.cheminTextBox.Visible = false;
@@ -171,6 +173,7 @@
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "AjoutMediaSerie";
             this.Text = "Ajouter un média - série";
+            this.Load += new System.EventHandler(this.AjoutMediaSerie_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.ResumeLayout(false);

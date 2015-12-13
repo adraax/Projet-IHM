@@ -58,11 +58,13 @@ namespace Main_project_VERON_MERLIN
                 suiviButton.Text = "Ne plus suivre la série";
             }
 
-            commande = string.Format("SELECT CHEMIN FROM PROJET_IHM_MEDIA WHERE NOMSERIE='{0}' AND TYPE='Image'", Properties.Settings.Default.serie);
+            commande = string.Format("SELECT CHEMIN FROM PROJET_IHM_MEDIA WHERE NOMSERIE='{0}' AND NUMEROSAISON IS NULL AND TYPE='Image'", Properties.Settings.Default.serie);
             ds = bdd.Select(commande);
             if (ds.Tables["Data"].Rows.Count > 0)
             {
                 image = Image.FromFile(ds.Tables["Data"].Rows[0]["CHEMIN"].ToString(), true);
+                Bitmap im = new Bitmap(image, new Size(ImageBox.Size.Width, ImageBox.Size.Height));
+                ImageBox.Image = im;
             }
         }
 
@@ -104,7 +106,7 @@ namespace Main_project_VERON_MERLIN
             }
         }
 
-        private void ImageBox_Paint(object sender, PaintEventArgs e)
+        private void ImageBox_ClientSizeChanged(object sender, EventArgs e)
         {
             if (image != null)
             {

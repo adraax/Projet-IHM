@@ -172,7 +172,7 @@
             this.ImageBox.Size = new System.Drawing.Size(303, 323);
             this.ImageBox.TabIndex = 1;
             this.ImageBox.TabStop = false;
-            this.ImageBox.Paint += new System.Windows.Forms.PaintEventHandler(this.ImageBox_Paint);
+            this.ImageBox.ClientSizeChanged += new System.EventHandler(this.ImageBox_ClientSizeChanged);
             // 
             // FicheSerie
             // 

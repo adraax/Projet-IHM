@@ -37,10 +37,11 @@
             this.ajouterUneSaisonToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ajouterUnEpisodeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ajouterUnMédiaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.surUneSérieToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.surUnÉpisodeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.modifierToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.modifierUneSérieToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.modifierUnÉpisodeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.modifierUnMédiaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.supprimerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.supprimerUneSérieToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.supprimerUneSaisonToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -51,8 +52,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.suiviListe = new System.Windows.Forms.ListBox();
             this.serieListe = new System.Windows.Forms.ListBox();
-            this.surUneSérieToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.surUnÉpisodeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
@@ -82,14 +81,14 @@
             // déconnexionToolStripMenuItem
             // 
             this.déconnexionToolStripMenuItem.Name = "déconnexionToolStripMenuItem";
-            this.déconnexionToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
+            this.déconnexionToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.déconnexionToolStripMenuItem.Text = "Déconnexion";
             this.déconnexionToolStripMenuItem.Click += new System.EventHandler(this.déconnexionToolStripMenuItem_Click);
             // 
             // quitterToolStripMenuItem
             // 
             this.quitterToolStripMenuItem.Name = "quitterToolStripMenuItem";
-            this.quitterToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
+            this.quitterToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.quitterToolStripMenuItem.Text = "Quitter";
             this.quitterToolStripMenuItem.Click += new System.EventHandler(this.quitterToolStripMenuItem_Click);
             // 
@@ -136,12 +135,24 @@
             this.ajouterUnMédiaToolStripMenuItem.Text = "Ajouter un média";
             this.ajouterUnMédiaToolStripMenuItem.Click += new System.EventHandler(this.ajouterUnMédiaToolStripMenuItem_Click);
             // 
+            // surUneSérieToolStripMenuItem
+            // 
+            this.surUneSérieToolStripMenuItem.Name = "surUneSérieToolStripMenuItem";
+            this.surUneSérieToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.surUneSérieToolStripMenuItem.Text = "Sur une série";
+            this.surUneSérieToolStripMenuItem.Click += new System.EventHandler(this.surUneSérieToolStripMenuItem_Click);
+            // 
+            // surUnÉpisodeToolStripMenuItem
+            // 
+            this.surUnÉpisodeToolStripMenuItem.Name = "surUnÉpisodeToolStripMenuItem";
+            this.surUnÉpisodeToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.surUnÉpisodeToolStripMenuItem.Text = "Sur un épisode";
+            // 
             // modifierToolStripMenuItem
             // 
             this.modifierToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.modifierUneSérieToolStripMenuItem,
-            this.modifierUnÉpisodeToolStripMenuItem,
-            this.modifierUnMédiaToolStripMenuItem});
+            this.modifierUnÉpisodeToolStripMenuItem});
             this.modifierToolStripMenuItem.Name = "modifierToolStripMenuItem";
             this.modifierToolStripMenuItem.Size = new System.Drawing.Size(64, 20);
             this.modifierToolStripMenuItem.Text = "Modifier";
@@ -158,12 +169,6 @@
             this.modifierUnÉpisodeToolStripMenuItem.Name = "modifierUnÉpisodeToolStripMenuItem";
             this.modifierUnÉpisodeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.modifierUnÉpisodeToolStripMenuItem.Text = "Modifier un épisode";
-            // 
-            // modifierUnMédiaToolStripMenuItem
-            // 
-            this.modifierUnMédiaToolStripMenuItem.Name = "modifierUnMédiaToolStripMenuItem";
-            this.modifierUnMédiaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.modifierUnMédiaToolStripMenuItem.Text = "Modifier un média";
             // 
             // supprimerToolStripMenuItem
             // 
@@ -258,19 +263,6 @@
             this.serieListe.TabIndex = 3;
             this.serieListe.SelectedIndexChanged += new System.EventHandler(this.serieListe_SelectedIndexChanged);
             // 
-            // surUneSérieToolStripMenuItem
-            // 
-            this.surUneSérieToolStripMenuItem.Name = "surUneSérieToolStripMenuItem";
-            this.surUneSérieToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.surUneSérieToolStripMenuItem.Text = "Sur une série";
-            this.surUneSérieToolStripMenuItem.Click += new System.EventHandler(this.surUneSérieToolStripMenuItem_Click);
-            // 
-            // surUnÉpisodeToolStripMenuItem
-            // 
-            this.surUnÉpisodeToolStripMenuItem.Name = "surUnÉpisodeToolStripMenuItem";
-            this.surUnÉpisodeToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.surUnÉpisodeToolStripMenuItem.Text = "Sur un épisode";
-            // 
             // AccueilUser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -305,7 +297,6 @@
         private System.Windows.Forms.ToolStripMenuItem modifierToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem modifierUneSérieToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem modifierUnÉpisodeToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem modifierUnMédiaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem supprimerToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem supprimerUneSérieToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem supprimerUneSaisonToolStripMenuItem;

@@ -25,11 +25,13 @@ namespace Main_project_VERON_MERLIN
         {
             this.Text = string.Format("Fiche {0} - saison {1} - épisode {2}", Properties.Settings.Default.serie, Properties.Settings.Default.saison, Properties.Settings.Default.episode);
 
-            commande = string.Format("SELECT NUMEPISODE, NOMEPISODE, SYNOPSIS FROM PROJET_IHM_EPISODE WHERE NOMSERIE='{0}' AND NUMEROSAISON={1}", Properties.Settings.Default.serie, Properties.Settings.Default.saison);
+            commande = string.Format("SELECT NUMEPISODE, NOMEPISODE, SYNOPSIS, DATEDIFFUSION FROM PROJET_IHM_EPISODE WHERE NOMSERIE='{0}' AND NUMEROSAISON={1}", Properties.Settings.Default.serie, Properties.Settings.Default.saison);
             ds = bdd.Select(commande);
 
             nomEpisode.Text = (string)ds.Tables["Data"].Rows[0]["NOMEPISODE"];
             synopsis.Text = (string)ds.Tables["Data"].Rows[0]["SYNOPSIS"];
+            DateTime date = Convert.ToDateTime(ds.Tables["Data"].Rows[0]["DATEDIFFUSION"]);
+            dateDiff.Text = string.Format("Diffusé le : {0}", date.ToString("d"));
 
             commande = string.Format("SELECT * FROM PROJET_IHM_MEDIA WHERE NOMSERIE='{0}' AND NUMEROSAISON={1} AND NUMEROEPISODE={2}", Properties.Settings.Default.serie, Properties.Settings.Default.saison, Properties.Settings.Default.episode);
 

@@ -32,6 +32,7 @@
             this.optionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.déconnexionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.quitterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.planningToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ajouterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ajouterUneSérieToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ajouterUneSaisonToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -52,7 +53,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.suiviListe = new System.Windows.Forms.ListBox();
             this.serieListe = new System.Windows.Forms.ListBox();
-            this.planningToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
@@ -83,16 +83,23 @@
             // déconnexionToolStripMenuItem
             // 
             this.déconnexionToolStripMenuItem.Name = "déconnexionToolStripMenuItem";
-            this.déconnexionToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.déconnexionToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
             this.déconnexionToolStripMenuItem.Text = "Déconnexion";
             this.déconnexionToolStripMenuItem.Click += new System.EventHandler(this.déconnexionToolStripMenuItem_Click);
             // 
             // quitterToolStripMenuItem
             // 
             this.quitterToolStripMenuItem.Name = "quitterToolStripMenuItem";
-            this.quitterToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.quitterToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
             this.quitterToolStripMenuItem.Text = "Quitter";
             this.quitterToolStripMenuItem.Click += new System.EventHandler(this.quitterToolStripMenuItem_Click);
+            // 
+            // planningToolStripMenuItem
+            // 
+            this.planningToolStripMenuItem.Name = "planningToolStripMenuItem";
+            this.planningToolStripMenuItem.Size = new System.Drawing.Size(66, 20);
+            this.planningToolStripMenuItem.Text = "Planning";
+            this.planningToolStripMenuItem.Click += new System.EventHandler(this.planningToolStripMenuItem_Click);
             // 
             // ajouterToolStripMenuItem
             // 
@@ -148,6 +155,7 @@
             this.surUnÉpisodeToolStripMenuItem.Name = "surUnÉpisodeToolStripMenuItem";
             this.surUnÉpisodeToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.surUnÉpisodeToolStripMenuItem.Text = "Sur un épisode";
+            this.surUnÉpisodeToolStripMenuItem.Click += new System.EventHandler(this.surUnÉpisodeToolStripMenuItem_Click);
             // 
             // modifierToolStripMenuItem
             // 
@@ -264,13 +272,6 @@
             this.serieListe.Size = new System.Drawing.Size(199, 211);
             this.serieListe.TabIndex = 3;
             this.serieListe.SelectedIndexChanged += new System.EventHandler(this.serieListe_SelectedIndexChanged);
-            // 
-            // planningToolStripMenuItem
-            // 
-            this.planningToolStripMenuItem.Name = "planningToolStripMenuItem";
-            this.planningToolStripMenuItem.Size = new System.Drawing.Size(66, 20);
-            this.planningToolStripMenuItem.Text = "Planning";
-            this.planningToolStripMenuItem.Click += new System.EventHandler(this.planningToolStripMenuItem_Click);
             // 
             // AccueilUser
             // 

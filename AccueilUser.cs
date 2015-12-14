@@ -151,5 +151,11 @@ namespace Main_project_VERON_MERLIN
         {
 
         }
+
+        private void surUnÉpisodeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AjoutMediaEpisode a = new AjoutMediaEpisode();
+            a.ShowDialog();
+        }
     }
 }

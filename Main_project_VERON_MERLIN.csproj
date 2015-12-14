@@ -84,6 +84,12 @@
     <Compile Include="AjoutEpisode.Designer.cs">
       <DependentUpon>AjoutEpisode.cs</DependentUpon>
     </Compile>
+    <Compile Include="AjoutMediaEpisode.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AjoutMediaEpisode.Designer.cs">
+      <DependentUpon>AjoutMediaEpisode.cs</DependentUpon>
+    </Compile>
     <Compile Include="AjoutMediaSerie.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -146,6 +152,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AjoutEpisode.resx">
       <DependentUpon>AjoutEpisode.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AjoutMediaEpisode.resx">
+      <DependentUpon>AjoutMediaEpisode.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AjoutMediaSerie.resx">
       <DependentUpon>AjoutMediaSerie.cs</DependentUpon>

@@ -51,7 +51,7 @@ namespace Main_project_VERON_MERLIN
 
             if (listeSerie.SelectedIndex != -1)
             {
-                Properties.Settings.Default.serie = listeSerie.SelectedItem.ToString();
+                Properties.Settings.Default.serie = listeSerie.SelectedItem.ToString().Replace("'", "''");
                 Properties.Settings.Default.Save();
 
                 typeLabel.Visible = true;

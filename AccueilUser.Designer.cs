@@ -52,6 +52,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.suiviListe = new System.Windows.Forms.ListBox();
             this.serieListe = new System.Windows.Forms.ListBox();
+            this.planningToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
@@ -60,6 +61,7 @@
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.optionsToolStripMenuItem,
+            this.planningToolStripMenuItem,
             this.ajouterToolStripMenuItem,
             this.modifierToolStripMenuItem,
             this.supprimerToolStripMenuItem});
@@ -133,7 +135,6 @@
             this.ajouterUnMédiaToolStripMenuItem.Name = "ajouterUnMédiaToolStripMenuItem";
             this.ajouterUnMédiaToolStripMenuItem.Size = new System.Drawing.Size(174, 22);
             this.ajouterUnMédiaToolStripMenuItem.Text = "Ajouter un média";
-            this.ajouterUnMédiaToolStripMenuItem.Click += new System.EventHandler(this.ajouterUnMédiaToolStripMenuItem_Click);
             // 
             // surUneSérieToolStripMenuItem
             // 
@@ -163,6 +164,7 @@
             this.modifierUneSérieToolStripMenuItem.Name = "modifierUneSérieToolStripMenuItem";
             this.modifierUneSérieToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.modifierUneSérieToolStripMenuItem.Text = "Modifier une série";
+            this.modifierUneSérieToolStripMenuItem.Click += new System.EventHandler(this.modifierUneSérieToolStripMenuItem_Click);
             // 
             // modifierUnÉpisodeToolStripMenuItem
             // 
@@ -263,6 +265,13 @@
             this.serieListe.TabIndex = 3;
             this.serieListe.SelectedIndexChanged += new System.EventHandler(this.serieListe_SelectedIndexChanged);
             // 
+            // planningToolStripMenuItem
+            // 
+            this.planningToolStripMenuItem.Name = "planningToolStripMenuItem";
+            this.planningToolStripMenuItem.Size = new System.Drawing.Size(66, 20);
+            this.planningToolStripMenuItem.Text = "Planning";
+            this.planningToolStripMenuItem.Click += new System.EventHandler(this.planningToolStripMenuItem_Click);
+            // 
             // AccueilUser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -309,5 +318,6 @@
         private System.Windows.Forms.ListBox serieListe;
         private System.Windows.Forms.ToolStripMenuItem surUneSérieToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem surUnÉpisodeToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem planningToolStripMenuItem;
     }
 }

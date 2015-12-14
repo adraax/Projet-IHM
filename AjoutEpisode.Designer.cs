@@ -39,13 +39,18 @@
             this.nomEpisode = new System.Windows.Forms.TextBox();
             this.labelSynopsis = new System.Windows.Forms.Label();
             this.synopsisEpisode = new System.Windows.Forms.RichTextBox();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.labelDate = new System.Windows.Forms.Label();
+            this.dateDiff = new System.Windows.Forms.DateTimePicker();
+            this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // ajouterEpisode
             // 
-            this.ajouterEpisode.Location = new System.Drawing.Point(139, 274);
+            this.ajouterEpisode.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ajouterEpisode.Location = new System.Drawing.Point(3, 540);
             this.ajouterEpisode.Name = "ajouterEpisode";
-            this.ajouterEpisode.Size = new System.Drawing.Size(121, 23);
+            this.ajouterEpisode.Size = new System.Drawing.Size(735, 25);
             this.ajouterEpisode.TabIndex = 20;
             this.ajouterEpisode.Text = "Ajouter l\'épisode";
             this.ajouterEpisode.UseVisualStyleBackColor = true;
@@ -54,10 +59,11 @@
             // 
             // listeSaison
             // 
+            this.listeSaison.Dock = System.Windows.Forms.DockStyle.Fill;
             this.listeSaison.FormattingEnabled = true;
-            this.listeSaison.Location = new System.Drawing.Point(139, 66);
+            this.listeSaison.Location = new System.Drawing.Point(3, 72);
             this.listeSaison.Name = "listeSaison";
-            this.listeSaison.Size = new System.Drawing.Size(121, 21);
+            this.listeSaison.Size = new System.Drawing.Size(735, 21);
             this.listeSaison.TabIndex = 8;
             this.listeSaison.Visible = false;
             this.listeSaison.SelectedIndexChanged += new System.EventHandler(this.listeSaison_SelectedIndexChanged);
@@ -65,47 +71,55 @@
             // saisonLabel
             // 
             this.saisonLabel.AutoSize = true;
-            this.saisonLabel.Location = new System.Drawing.Point(144, 49);
+            this.saisonLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.saisonLabel.Location = new System.Drawing.Point(3, 42);
             this.saisonLabel.Name = "saisonLabel";
-            this.saisonLabel.Size = new System.Drawing.Size(111, 13);
+            this.saisonLabel.Size = new System.Drawing.Size(735, 27);
             this.saisonLabel.TabIndex = 7;
             this.saisonLabel.Text = "Choississez la saison :";
+            this.saisonLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.saisonLabel.Visible = false;
             // 
             // listeSerie
             // 
+            this.listeSerie.Dock = System.Windows.Forms.DockStyle.Fill;
             this.listeSerie.FormattingEnabled = true;
-            this.listeSerie.Location = new System.Drawing.Point(139, 25);
+            this.listeSerie.Location = new System.Drawing.Point(3, 23);
             this.listeSerie.Name = "listeSerie";
-            this.listeSerie.Size = new System.Drawing.Size(121, 21);
+            this.listeSerie.Size = new System.Drawing.Size(735, 21);
             this.listeSerie.TabIndex = 6;
             this.listeSerie.SelectedIndexChanged += new System.EventHandler(this.listeSerie_SelectedIndexChanged);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(147, 9);
+            this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label1.Location = new System.Drawing.Point(3, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(108, 13);
+            this.label1.Size = new System.Drawing.Size(735, 20);
             this.label1.TabIndex = 5;
             this.label1.Text = "Choisissez une série :";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // episodeLabel
             // 
             this.episodeLabel.AutoSize = true;
-            this.episodeLabel.Location = new System.Drawing.Point(124, 90);
+            this.episodeLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.episodeLabel.Location = new System.Drawing.Point(3, 96);
             this.episodeLabel.Name = "episodeLabel";
-            this.episodeLabel.Size = new System.Drawing.Size(150, 13);
+            this.episodeLabel.Size = new System.Drawing.Size(735, 23);
             this.episodeLabel.TabIndex = 10;
             this.episodeLabel.Text = "Choisissez l\'épisode à ajouter :";
+            this.episodeLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.episodeLabel.Visible = false;
             // 
             // listeEpisode
             // 
+            this.listeEpisode.Dock = System.Windows.Forms.DockStyle.Fill;
             this.listeEpisode.FormattingEnabled = true;
-            this.listeEpisode.Location = new System.Drawing.Point(139, 103);
+            this.listeEpisode.Location = new System.Drawing.Point(3, 122);
             this.listeEpisode.Name = "listeEpisode";
-            this.listeEpisode.Size = new System.Drawing.Size(121, 21);
+            this.listeEpisode.Size = new System.Drawing.Size(735, 21);
             this.listeEpisode.TabIndex = 10;
             this.listeEpisode.Visible = false;
             this.listeEpisode.SelectedIndexChanged += new System.EventHandler(this.listeEpisode_SelectedIndexChanged);
@@ -113,60 +127,115 @@
             // labelNom
             // 
             this.labelNom.AutoSize = true;
-            this.labelNom.Location = new System.Drawing.Point(147, 131);
+            this.labelNom.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.labelNom.Location = new System.Drawing.Point(3, 147);
             this.labelNom.Name = "labelNom";
-            this.labelNom.Size = new System.Drawing.Size(94, 13);
+            this.labelNom.Size = new System.Drawing.Size(735, 22);
             this.labelNom.TabIndex = 21;
             this.labelNom.Text = "Nom de l\'épisode :";
+            this.labelNom.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.labelNom.Visible = false;
             // 
             // nomEpisode
             // 
-            this.nomEpisode.Location = new System.Drawing.Point(139, 148);
+            this.nomEpisode.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.nomEpisode.Location = new System.Drawing.Point(3, 172);
             this.nomEpisode.Name = "nomEpisode";
-            this.nomEpisode.Size = new System.Drawing.Size(121, 20);
+            this.nomEpisode.Size = new System.Drawing.Size(735, 20);
             this.nomEpisode.TabIndex = 22;
             this.nomEpisode.Visible = false;
             // 
             // labelSynopsis
             // 
             this.labelSynopsis.AutoSize = true;
-            this.labelSynopsis.Location = new System.Drawing.Point(144, 171);
+            this.labelSynopsis.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.labelSynopsis.Location = new System.Drawing.Point(3, 195);
             this.labelSynopsis.Name = "labelSynopsis";
-            this.labelSynopsis.Size = new System.Drawing.Size(108, 13);
+            this.labelSynopsis.Size = new System.Drawing.Size(735, 19);
             this.labelSynopsis.TabIndex = 23;
-            this.labelSynopsis.Text = "Synopsis de l\'épisode";
+            this.labelSynopsis.Text = "Synopsis de l\'épisode :";
+            this.labelSynopsis.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.labelSynopsis.Visible = false;
             // 
             // synopsisEpisode
             // 
-            this.synopsisEpisode.Location = new System.Drawing.Point(139, 188);
+            this.synopsisEpisode.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.synopsisEpisode.Location = new System.Drawing.Point(3, 217);
             this.synopsisEpisode.Name = "synopsisEpisode";
-            this.synopsisEpisode.Size = new System.Drawing.Size(121, 80);
+            this.synopsisEpisode.Size = new System.Drawing.Size(735, 270);
             this.synopsisEpisode.TabIndex = 24;
             this.synopsisEpisode.Text = "";
             this.synopsisEpisode.Visible = false;
+            // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.ColumnCount = 1;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel1.Controls.Add(this.listeSerie, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.ajouterEpisode, 0, 12);
+            this.tableLayoutPanel1.Controls.Add(this.label1, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.synopsisEpisode, 0, 9);
+            this.tableLayoutPanel1.Controls.Add(this.labelSynopsis, 0, 8);
+            this.tableLayoutPanel1.Controls.Add(this.nomEpisode, 0, 7);
+            this.tableLayoutPanel1.Controls.Add(this.labelNom, 0, 6);
+            this.tableLayoutPanel1.Controls.Add(this.labelDate, 0, 10);
+            this.tableLayoutPanel1.Controls.Add(this.dateDiff, 0, 11);
+            this.tableLayoutPanel1.Controls.Add(this.saisonLabel, 0, 2);
+            this.tableLayoutPanel1.Controls.Add(this.episodeLabel, 0, 4);
+            this.tableLayoutPanel1.Controls.Add(this.listeSaison, 0, 3);
+            this.tableLayoutPanel1.Controls.Add(this.listeEpisode, 0, 5);
+            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 13;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 3.521127F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 3.87324F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4.753521F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4.753521F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4.049296F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4.929577F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 3.87324F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4.577465F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 3.34507F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 48.59155F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4.225352F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4.049296F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5.105634F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(741, 568);
+            this.tableLayoutPanel1.TabIndex = 25;
+            // 
+            // labelDate
+            // 
+            this.labelDate.AutoSize = true;
+            this.labelDate.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.labelDate.Location = new System.Drawing.Point(3, 490);
+            this.labelDate.Name = "labelDate";
+            this.labelDate.Size = new System.Drawing.Size(735, 24);
+            this.labelDate.TabIndex = 25;
+            this.labelDate.Text = "Date de diffusion :";
+            this.labelDate.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.labelDate.Visible = false;
+            // 
+            // dateDiff
+            // 
+            this.dateDiff.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dateDiff.Location = new System.Drawing.Point(3, 517);
+            this.dateDiff.Name = "dateDiff";
+            this.dateDiff.Size = new System.Drawing.Size(735, 20);
+            this.dateDiff.TabIndex = 26;
+            this.dateDiff.Visible = false;
             // 
             // AjoutEpisode
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(420, 329);
-            this.Controls.Add(this.synopsisEpisode);
-            this.Controls.Add(this.labelSynopsis);
-            this.Controls.Add(this.nomEpisode);
-            this.Controls.Add(this.labelNom);
-            this.Controls.Add(this.listeEpisode);
-            this.Controls.Add(this.episodeLabel);
-            this.Controls.Add(this.ajouterEpisode);
-            this.Controls.Add(this.listeSaison);
-            this.Controls.Add(this.saisonLabel);
-            this.Controls.Add(this.listeSerie);
-            this.Controls.Add(this.label1);
+            this.ClientSize = new System.Drawing.Size(741, 568);
+            this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "AjoutEpisode";
             this.Text = "Ajouter un épisode";
+            this.tableLayoutPanel1.ResumeLayout(false);
+            this.tableLayoutPanel1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -183,5 +252,8 @@
         private System.Windows.Forms.TextBox nomEpisode;
         private System.Windows.Forms.Label labelSynopsis;
         private System.Windows.Forms.RichTextBox synopsisEpisode;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.Label labelDate;
+        private System.Windows.Forms.DateTimePicker dateDiff;
     }
 }

@@ -36,11 +36,14 @@ namespace Main_project_VERON_MERLIN
                 }
                 else
                 {
-                    synopsisSerie.Text = synopsisSerie.Text.Replace("'", "''");
-                    commande = string.Format("INSERT INTO PROJET_IHM_SERIE VALUES('{0}', '{1}')", nomSerie.Text, synopsisSerie.Text);
-                    bdd.Insert(commande);
-                    Trace.WriteLine("-- Ajout série réussi");
-                    this.Dispose();
+                    if (etatSerie.SelectedIndex != -1)
+                    {
+                        synopsisSerie.Text = synopsisSerie.Text.Replace("'", "''");
+                        commande = string.Format("INSERT INTO PROJET_IHM_SERIE VALUES('{0}', '{1}', '{2}', {3})", nomSerie.Text, synopsisSerie.Text, etatSerie.SelectedItem.ToString(), nbSaison.Value);
+                        bdd.Insert(commande);
+                        Trace.WriteLine("-- Ajout série réussi");
+                        this.Dispose();
+                    }
                 }
             }
         }

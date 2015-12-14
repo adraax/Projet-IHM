@@ -28,10 +28,11 @@ namespace Main_project_VERON_MERLIN
             this.Text = string.Format("Fiche {0}", Properties.Settings.Default.serie);
             nomSerie.Text = Properties.Settings.Default.serie;
 
-            commande = string.Format("SELECT SYNOPSIS FROM PROJET_IHM_SERIE WHERE NOM='{0}'", Properties.Settings.Default.serie);
+            commande = string.Format("SELECT SYNOPSIS, ETAT FROM PROJET_IHM_SERIE WHERE NOM='{0}'", Properties.Settings.Default.serie);
             ds = bdd.Select(commande);
 
             synopsisSerie.Text = (string)ds.Tables["Data"].Rows[0]["SYNOPSIS"];
+            labelEtat.Text = string.Format("État : {0}", (string)ds.Tables["Data"].Rows[0]["ETAT"]);
 
             commande = string.Format("SELECT NUMEROSAISON FROM PROJET_IHM_SAISON WHERE NOMSERIE='{0}'", Properties.Settings.Default.serie);
             ds = bdd.Select(commande);

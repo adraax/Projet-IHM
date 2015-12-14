@@ -140,5 +140,16 @@ namespace Main_project_VERON_MERLIN
             AjoutMediaSerie a = new AjoutMediaSerie();
             a.ShowDialog();
         }
+
+        private void modifierUneSérieToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ModifierSerie m = new ModifierSerie();
+            m.ShowDialog();
+        }
+
+        private void planningToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

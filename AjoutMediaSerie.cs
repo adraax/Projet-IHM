@@ -99,7 +99,7 @@ namespace Main_project_VERON_MERLIN
 
         private void valider_Click(object sender, EventArgs e)
         {
-            string targetPath = string.Format(@"Data\{0}\", listeSerie.SelectedItem.ToString().Replace("'", "''"));
+            string targetPath = string.Format(@"Data\{0}\", Properties.Settings.Default.serie);
             string destFile = System.IO.Path.Combine(targetPath, nomFichier);
             if (!System.IO.Directory.Exists(targetPath))
             {

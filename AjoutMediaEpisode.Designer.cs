@@ -157,6 +157,7 @@
             this.listeSaison.Size = new System.Drawing.Size(451, 21);
             this.listeSaison.TabIndex = 6;
             this.listeSaison.Visible = false;
+            this.listeSaison.SelectedIndexChanged += new System.EventHandler(this.listeSaison_SelectedIndexChanged);
             // 
             // listeEpisode
             // 
@@ -167,6 +168,7 @@
             this.listeEpisode.Size = new System.Drawing.Size(451, 21);
             this.listeEpisode.TabIndex = 7;
             this.listeEpisode.Visible = false;
+            this.listeEpisode.SelectedIndexChanged += new System.EventHandler(this.listeEpisode_SelectedIndexChanged);
             // 
             // listeType
             // 
@@ -181,6 +183,7 @@
             this.listeType.Size = new System.Drawing.Size(451, 21);
             this.listeType.TabIndex = 8;
             this.listeType.Visible = false;
+            this.listeType.SelectedIndexChanged += new System.EventHandler(this.listeType_SelectedIndexChanged);
             // 
             // tableLayoutPanel2
             // 
@@ -207,6 +210,7 @@
             this.parcourir.Text = "Parcourir";
             this.parcourir.UseVisualStyleBackColor = true;
             this.parcourir.Visible = false;
+            this.parcourir.Click += new System.EventHandler(this.parcourir_Click);
             // 
             // ajouter
             // 
@@ -218,6 +222,7 @@
             this.ajouter.Text = "Ajouter le média";
             this.ajouter.UseVisualStyleBackColor = true;
             this.ajouter.Visible = false;
+            this.ajouter.Click += new System.EventHandler(this.ajouter_Click);
             // 
             // cheminMedia
             // 

@@ -140,7 +140,7 @@ namespace Main_project_VERON_MERLIN
 
             Trace.WriteLine(string.Format("-- Ajout Épisode : ajout de l'épisode {0} à la saison {1} de la série {2}", noEpisode, noSaison, serie));
 
-            commande = string.Format("INSERT INTO PROJET_IHM_EPISODE VALUES('{0}', {1}, {2}, '{3}', '{4}', NULL)", serie, noSaison, noEpisode, synopsisEpisode.Text, nomEpisode.Text);
+            commande = string.Format("INSERT INTO PROJET_IHM_EPISODE VALUES('{0}', {1}, {2}, '{3}', '{4}', TO_DATE('{5}', 'dd/MM/yyyy'))", serie, noSaison, noEpisode, synopsisEpisode.Text, nomEpisode.Text, dateDiff.Value.ToString("d"));
             bdd.Insert(commande);
 
             this.Dispose();

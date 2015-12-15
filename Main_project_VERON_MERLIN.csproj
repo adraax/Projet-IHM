@@ -84,6 +84,12 @@
     <Compile Include="AjoutEpisode.Designer.cs">
       <DependentUpon>AjoutEpisode.cs</DependentUpon>
     </Compile>
+    <Compile Include="AjouterNoteEpisode.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AjouterNoteEpisode.Designer.cs">
+      <DependentUpon>AjouterNoteEpisode.cs</DependentUpon>
+    </Compile>
     <Compile Include="AjoutMediaEpisode.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -133,6 +139,18 @@
     <Compile Include="MainWindow.Designer.cs">
       <DependentUpon>MainWindow.cs</DependentUpon>
     </Compile>
+    <Compile Include="ModifierEpisode.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModifierEpisode.designer.cs">
+      <DependentUpon>ModifierEpisode.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModifierNoteEpisode.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModifierNoteEpisode.Designer.cs">
+      <DependentUpon>ModifierNoteEpisode.cs</DependentUpon>
+    </Compile>
     <Compile Include="ModifierSerie.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -159,6 +177,9 @@
     <EmbeddedResource Include="AjoutEpisode.resx">
       <DependentUpon>AjoutEpisode.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AjouterNoteEpisode.resx">
+      <DependentUpon>AjouterNoteEpisode.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AjoutMediaEpisode.resx">
       <DependentUpon>AjoutMediaEpisode.cs</DependentUpon>
     </EmbeddedResource>
@@ -182,6 +203,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MainWindow.resx">
       <DependentUpon>MainWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModifierEpisode.resx">
+      <DependentUpon>ModifierEpisode.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModifierNoteEpisode.resx">
+      <DependentUpon>ModifierNoteEpisode.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ModifierSerie.resx">
       <DependentUpon>ModifierSerie.cs</DependentUpon>

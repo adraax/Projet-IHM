@@ -149,13 +149,20 @@ namespace Main_project_VERON_MERLIN
 
         private void planningToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            Planning p = new Planning();
+            p.ShowDialog();
         }
 
         private void surUnÉpisodeToolStripMenuItem_Click(object sender, EventArgs e)
         {
             AjoutMediaEpisode a = new AjoutMediaEpisode();
             a.ShowDialog();
+        }
+
+        private void modifierUnÉpisodeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ModifierEpisode m = new ModifierEpisode();
+            m.ShowDialog();
         }
     }
 }

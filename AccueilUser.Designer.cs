@@ -179,6 +179,7 @@
             this.modifierUnÉpisodeToolStripMenuItem.Name = "modifierUnÉpisodeToolStripMenuItem";
             this.modifierUnÉpisodeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.modifierUnÉpisodeToolStripMenuItem.Text = "Modifier un épisode";
+            this.modifierUnÉpisodeToolStripMenuItem.Click += new System.EventHandler(this.modifierUnÉpisodeToolStripMenuItem_Click);
             // 
             // supprimerToolStripMenuItem
             // 

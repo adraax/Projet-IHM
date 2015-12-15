@@ -35,7 +35,7 @@ namespace Main_project_VERON_MERLIN
             SynopsisSerie.Text = SynopsisSerie.Text.Replace("'", "''");
             string serieSelec = ListeSeries.Items[ListeSeries.SelectedIndex].ToString().Replace("'", "''");
             decimal nbsaisons = ChoixNbSaisons.Value;
-            commande = string.Format("UPDATE PROJET_IHM_SERIE SET SYNOPSIS='{0}', NBSAISON={1}, ETAT='{3}' WHERE NOM='{2}')",  SynopsisSerie.Text,nbsaisons, serieSelec, ChoixEtatSerie.ToString());
+            commande = string.Format("UPDATE PROJET_IHM_SERIE SET SYNOPSIS='{0}', NBSAISON={1}, ETAT='{3}' WHERE NOM='{2}'",  SynopsisSerie.Text,nbsaisons, serieSelec, ChoixEtatSerie.SelectedItem.ToString());
             bdd.Update(commande);
             Trace.WriteLine("-- Modification série réussie");
             this.Dispose();

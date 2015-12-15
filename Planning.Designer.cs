@@ -38,7 +38,7 @@
             this.calendrier.Location = new System.Drawing.Point(0, 0);
             this.calendrier.Name = "calendrier";
             this.calendrier.TabIndex = 0;
-            this.calendrier.DateChanged += new System.Windows.Forms.DateRangeEventHandler(this.calendrier_DateChanged);
+            this.calendrier.DateSelected += new System.Windows.Forms.DateRangeEventHandler(this.calendrier_DateChanged);
             // 
             // Planning
             // 

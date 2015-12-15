@@ -63,11 +63,16 @@ namespace Main_project_VERON_MERLIN
             ds = bdd.Select(commande);
             if (ds.Tables["Data"].Rows.Count > 0)
             {
-                if (System.IO.Directory.Exists((string)ds.Tables["Data"].Rows[0]["CHEMIN"]))
+                if (System.IO.File.Exists((string)ds.Tables["Data"].Rows[0]["CHEMIN"]))
                 {
                     image = Image.FromFile(ds.Tables["Data"].Rows[0]["CHEMIN"].ToString(), true);
                     Bitmap im = new Bitmap(image, new Size(ImageBox.Size.Width, ImageBox.Size.Height));
                     ImageBox.Image = im;
+                }
+                else
+                {
+                    Console.WriteLine("Media non trouvé.");
+                    Console.WriteLine((string)ds.Tables["Data"].Rows[0]["CHEMIN"]);
                 }
             }
         }

@@ -287,12 +287,14 @@
             this.urUneSérieToolStripMenuItem.Name = "urUneSérieToolStripMenuItem";
             this.urUneSérieToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.urUneSérieToolStripMenuItem.Text = "Sur une série";
+            this.urUneSérieToolStripMenuItem.Click += new System.EventHandler(this.urUneSérieToolStripMenuItem_Click);
             // 
             // surUnÉpisodeToolStripMenuItem1
             // 
             this.surUnÉpisodeToolStripMenuItem1.Name = "surUnÉpisodeToolStripMenuItem1";
             this.surUnÉpisodeToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
             this.surUnÉpisodeToolStripMenuItem1.Text = "Sur un épisode";
+            this.surUnÉpisodeToolStripMenuItem1.Click += new System.EventHandler(this.surUnÉpisodeToolStripMenuItem1_Click);
             // 
             // AccueilUser
             // 

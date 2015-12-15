@@ -201,6 +201,12 @@
     <Compile Include="SuppressionEpisode.Designer.cs">
       <DependentUpon>SuppressionEpisode.cs</DependentUpon>
     </Compile>
+    <Compile Include="SuppressionMediaEpisode.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SuppressionMediaEpisode.Designer.cs">
+      <DependentUpon>SuppressionMediaEpisode.cs</DependentUpon>
+    </Compile>
     <Compile Include="SuppressionSaison.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -285,6 +291,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SuppressionEpisode.resx">
       <DependentUpon>SuppressionEpisode.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SuppressionMediaEpisode.resx">
+      <DependentUpon>SuppressionMediaEpisode.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SuppressionSaison.resx">
       <DependentUpon>SuppressionSaison.cs</DependentUpon>

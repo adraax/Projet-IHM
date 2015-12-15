@@ -182,5 +182,16 @@ namespace Main_project_VERON_MERLIN
             SuppressionEpisode s = new SuppressionEpisode();
             s.ShowDialog();
         }
+
+        private void urUneSérieToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void surUnÉpisodeToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            SuppressionMediaEpisode s = new SuppressionMediaEpisode();
+            s.ShowDialog();
+        }
     }
 }

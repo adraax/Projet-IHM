@@ -214,6 +214,7 @@
             this.supprimerUnÉpisodeToolStripMenuItem.Name = "supprimerUnÉpisodeToolStripMenuItem";
             this.supprimerUnÉpisodeToolStripMenuItem.Size = new System.Drawing.Size(190, 22);
             this.supprimerUnÉpisodeToolStripMenuItem.Text = "Supprimer un épisode";
+            this.supprimerUnÉpisodeToolStripMenuItem.Click += new System.EventHandler(this.supprimerUnÉpisodeToolStripMenuItem_Click);
             // 
             // supprimerUnMédiaToolStripMenuItem
             // 

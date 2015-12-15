@@ -195,6 +195,12 @@
     <Compile Include="SelectionConnexion.Designer.cs">
       <DependentUpon>SelectionConnexion.cs</DependentUpon>
     </Compile>
+    <Compile Include="SuppressionEpisode.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SuppressionEpisode.Designer.cs">
+      <DependentUpon>SuppressionEpisode.cs</DependentUpon>
+    </Compile>
     <Compile Include="SuppressionSaison.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -276,6 +282,9 @@
     </Compile>
     <EmbeddedResource Include="SelectionConnexion.resx">
       <DependentUpon>SelectionConnexion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SuppressionEpisode.resx">
+      <DependentUpon>SuppressionEpisode.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SuppressionSaison.resx">
       <DependentUpon>SuppressionSaison.cs</DependentUpon>

@@ -126,6 +126,7 @@
             this.vuCheckBox.Text = "Épisode vu";
             this.vuCheckBox.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.vuCheckBox.UseVisualStyleBackColor = true;
+            this.vuCheckBox.CheckedChanged += new System.EventHandler(this.vuCheckBox_CheckedChanged);
             // 
             // tableLayoutPanel3
             // 
@@ -190,6 +191,7 @@
             this.media.TabIndex = 0;
             this.media.Text = "button1";
             this.media.UseVisualStyleBackColor = true;
+            this.media.Click += new System.EventHandler(this.media_Click);
             // 
             // noterEpisode
             // 

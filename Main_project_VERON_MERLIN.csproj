@@ -127,6 +127,12 @@
     <Compile Include="FicheEpisode.Designer.cs">
       <DependentUpon>FicheEpisode.cs</DependentUpon>
     </Compile>
+    <Compile Include="FicheMediaEpisode.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FicheMediaEpisode.Designer.cs">
+      <DependentUpon>FicheMediaEpisode.cs</DependentUpon>
+    </Compile>
     <Compile Include="FicheSaison.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -209,6 +215,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FicheEpisode.resx">
       <DependentUpon>FicheEpisode.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FicheMediaEpisode.resx">
+      <DependentUpon>FicheMediaEpisode.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FicheSaison.resx">
       <DependentUpon>FicheSaison.cs</DependentUpon>

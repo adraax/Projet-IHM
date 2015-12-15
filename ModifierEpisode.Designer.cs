@@ -39,8 +39,8 @@
             this.ChampNomEpi = new System.Windows.Forms.TextBox();
             this.ResumeLabel = new System.Windows.Forms.Label();
             this.ResumeEpisode = new System.Windows.Forms.RichTextBox();
-            this.Modifier = new System.Windows.Forms.Button();
             this.labelDate = new System.Windows.Forms.Label();
+            this.Modifier = new System.Windows.Forms.Button();
             this.date = new System.Windows.Forms.DateTimePicker();
             this.PanelModifEpisode.SuspendLayout();
             this.SuspendLayout();
@@ -192,18 +192,6 @@
             this.ResumeEpisode.Text = "";
             this.ResumeEpisode.Visible = false;
             // 
-            // Modifier
-            // 
-            this.Modifier.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Modifier.Location = new System.Drawing.Point(3, 343);
-            this.Modifier.Name = "Modifier";
-            this.Modifier.Size = new System.Drawing.Size(500, 21);
-            this.Modifier.TabIndex = 10;
-            this.Modifier.Text = "Modifier l\'épisode";
-            this.Modifier.UseVisualStyleBackColor = true;
-            this.Modifier.Visible = false;
-            this.Modifier.Click += new System.EventHandler(this.Modifier_Click);
-            // 
             // labelDate
             // 
             this.labelDate.AutoSize = true;
@@ -215,6 +203,18 @@
             this.labelDate.Text = "Date de diffusion";
             this.labelDate.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.labelDate.Visible = false;
+            // 
+            // Modifier
+            // 
+            this.Modifier.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Modifier.Location = new System.Drawing.Point(3, 343);
+            this.Modifier.Name = "Modifier";
+            this.Modifier.Size = new System.Drawing.Size(500, 21);
+            this.Modifier.TabIndex = 10;
+            this.Modifier.Text = "Modifier l\'épisode";
+            this.Modifier.UseVisualStyleBackColor = true;
+            this.Modifier.Visible = false;
+            this.Modifier.Click += new System.EventHandler(this.Modifier_Click);
             // 
             // date
             // 
@@ -232,7 +232,7 @@
             this.ClientSize = new System.Drawing.Size(506, 367);
             this.Controls.Add(this.PanelModifEpisode);
             this.Name = "ModifierEpisode";
-            this.Text = "ModifierEpisode";
+            this.Text = "Modifier un épisode";
             this.PanelModifEpisode.ResumeLayout(false);
             this.PanelModifEpisode.PerformLayout();
             this.ResumeLayout(false);

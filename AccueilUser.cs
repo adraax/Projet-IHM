@@ -164,5 +164,11 @@ namespace Main_project_VERON_MERLIN
             ModifierEpisode m = new ModifierEpisode();
             m.ShowDialog();
         }
+
+        private void supprimerUneSérieToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SuppressionSerie s = new SuppressionSerie();
+            s.ShowDialog();
+        }
     }
 }

@@ -53,6 +53,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.suiviListe = new System.Windows.Forms.ListBox();
             this.serieListe = new System.Windows.Forms.ListBox();
+            this.urUneSérieToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.surUnÉpisodeToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
@@ -198,6 +200,7 @@
             this.supprimerUneSérieToolStripMenuItem.Name = "supprimerUneSérieToolStripMenuItem";
             this.supprimerUneSérieToolStripMenuItem.Size = new System.Drawing.Size(190, 22);
             this.supprimerUneSérieToolStripMenuItem.Text = "Supprimer une série";
+            this.supprimerUneSérieToolStripMenuItem.Click += new System.EventHandler(this.supprimerUneSérieToolStripMenuItem_Click);
             // 
             // supprimerUneSaisonToolStripMenuItem
             // 
@@ -213,6 +216,9 @@
             // 
             // supprimerUnMédiaToolStripMenuItem
             // 
+            this.supprimerUnMédiaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.urUneSérieToolStripMenuItem,
+            this.surUnÉpisodeToolStripMenuItem1});
             this.supprimerUnMédiaToolStripMenuItem.Name = "supprimerUnMédiaToolStripMenuItem";
             this.supprimerUnMédiaToolStripMenuItem.Size = new System.Drawing.Size(190, 22);
             this.supprimerUnMédiaToolStripMenuItem.Text = "Supprimer un média";
@@ -274,6 +280,18 @@
             this.serieListe.TabIndex = 3;
             this.serieListe.SelectedIndexChanged += new System.EventHandler(this.serieListe_SelectedIndexChanged);
             // 
+            // urUneSérieToolStripMenuItem
+            // 
+            this.urUneSérieToolStripMenuItem.Name = "urUneSérieToolStripMenuItem";
+            this.urUneSérieToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.urUneSérieToolStripMenuItem.Text = "Sur une série";
+            // 
+            // surUnÉpisodeToolStripMenuItem1
+            // 
+            this.surUnÉpisodeToolStripMenuItem1.Name = "surUnÉpisodeToolStripMenuItem1";
+            this.surUnÉpisodeToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.surUnÉpisodeToolStripMenuItem1.Text = "Sur un épisode";
+            // 
             // AccueilUser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -321,5 +339,7 @@
         private System.Windows.Forms.ToolStripMenuItem surUneSérieToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem surUnÉpisodeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem planningToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem urUneSérieToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem surUnÉpisodeToolStripMenuItem1;
     }
 }

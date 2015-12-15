@@ -185,7 +185,8 @@ namespace Main_project_VERON_MERLIN
 
         private void urUneSérieToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            SuppressionMediaSerie s = new SuppressionMediaSerie();
+            s.ShowDialog();
         }
 
         private void surUnÉpisodeToolStripMenuItem1_Click(object sender, EventArgs e)

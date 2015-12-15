@@ -207,6 +207,7 @@
             this.supprimerUneSaisonToolStripMenuItem.Name = "supprimerUneSaisonToolStripMenuItem";
             this.supprimerUneSaisonToolStripMenuItem.Size = new System.Drawing.Size(190, 22);
             this.supprimerUneSaisonToolStripMenuItem.Text = "Supprimer une saison";
+            this.supprimerUneSaisonToolStripMenuItem.Click += new System.EventHandler(this.supprimerUneSaisonToolStripMenuItem_Click);
             // 
             // supprimerUnÉpisodeToolStripMenuItem
             // 

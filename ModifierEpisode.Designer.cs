@@ -202,6 +202,7 @@
             this.Modifier.Text = "Modifier l\'épisode";
             this.Modifier.UseVisualStyleBackColor = true;
             this.Modifier.Visible = false;
+            this.Modifier.Click += new System.EventHandler(this.Modifier_Click);
             // 
             // labelDate
             // 

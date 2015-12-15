@@ -135,5 +135,26 @@ namespace Main_project_VERON_MERLIN
                 Modifier.Visible = true;
             }
         }
+
+        private void Modifier_Click(object sender, EventArgs e)
+        {
+            if(ChampNomEpi.Text == string.Empty)
+            {
+                MessageBox.Show("Le nom de l'épisode ne peut pas être vide");
+            }
+            else
+            {
+                decimal numEpisode = Decimal.Parse(ChoixNumEpi.SelectedItem.ToString().Substring("Episode ".Length, 1));
+                string serie = ChoixSerie.SelectedItem.ToString().Replace("'", "''");
+                string saison = ChoixSaison.SelectedItem.ToString();
+                string numSaison = saison.Substring(saison.Length - 1, 1);
+                decimal noSaison = decimal.Parse(numSaison);
+
+                commande = string.Format("UPDATE PROJET_IHM_EPISODE SET NOMEPISODE='{0}', SYNOPSIS='{1}', DATEDIFFUSION=TO_DATE('{2}', 'dd/MM/yyyy') WHERE NOMSERIE='{3}' AND NUMEROSAISON={4} AND NUMEPISODE={5}", ChampNomEpi.Text.Replace("'","''"), ResumeEpisode.Text.Replace("'", "''"), date.Value.ToString("d"), serie, noSaison, numEpisode);
+                bdd.Update(commande);
+
+                this.Dispose();
+            }
+        }
     }
 }

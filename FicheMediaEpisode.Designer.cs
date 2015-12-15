@@ -49,7 +49,7 @@
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(447, 261);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(608, 369);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // panneau
@@ -58,25 +58,26 @@
             this.panneau.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panneau.Location = new System.Drawing.Point(3, 3);
             this.panneau.Name = "panneau";
-            this.panneau.Size = new System.Drawing.Size(441, 225);
+            this.panneau.Size = new System.Drawing.Size(602, 333);
             this.panneau.TabIndex = 0;
             // 
             // audio
             // 
             this.audio.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.audio.Location = new System.Drawing.Point(3, 234);
+            this.audio.Location = new System.Drawing.Point(3, 342);
             this.audio.Name = "audio";
-            this.audio.Size = new System.Drawing.Size(217, 24);
+            this.audio.Size = new System.Drawing.Size(298, 24);
             this.audio.TabIndex = 1;
             this.audio.Text = "Audios";
             this.audio.UseVisualStyleBackColor = true;
+            this.audio.Click += new System.EventHandler(this.audio_Click);
             // 
             // video
             // 
             this.video.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.video.Location = new System.Drawing.Point(226, 234);
+            this.video.Location = new System.Drawing.Point(307, 342);
             this.video.Name = "video";
-            this.video.Size = new System.Drawing.Size(218, 24);
+            this.video.Size = new System.Drawing.Size(298, 24);
             this.video.TabIndex = 2;
             this.video.Text = "Vidéos";
             this.video.UseVisualStyleBackColor = true;
@@ -85,7 +86,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(447, 261);
+            this.ClientSize = new System.Drawing.Size(608, 369);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "FicheMediaEpisode";
             this.Text = "FicheMediaEpisode";

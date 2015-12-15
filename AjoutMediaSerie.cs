@@ -100,7 +100,7 @@ namespace Main_project_VERON_MERLIN
         private void valider_Click(object sender, EventArgs e)
         {
             string targetPath = string.Format(@"Data\{0}\", Properties.Settings.Default.serie);
-            string destFile = System.IO.Path.Combine(targetPath, nomFichier);
+            string destFile = System.IO.Path.Combine(targetPath, nomFichier.Replace(" ", "_"));
             if (!System.IO.Directory.Exists(targetPath))
             {
                 System.IO.Directory.CreateDirectory(targetPath);

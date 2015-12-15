@@ -157,8 +157,8 @@ namespace Main_project_VERON_MERLIN
 
         private void ajouter_Click(object sender, EventArgs e)
         {
-            string targetPath = string.Format(@"Data\{0}\{1}\{2}\", Properties.Settings.Default.serie, Properties.Settings.Default.saison, Properties.Settings.Default.episode);
-            string destFile = System.IO.Path.Combine(targetPath, nomFichier);
+            string targetPath = string.Format(@"Data\{0}\{1}\{2}\", Properties.Settings.Default.serie.Replace(" ","_"), Properties.Settings.Default.saison, Properties.Settings.Default.episode);
+            string destFile = System.IO.Path.Combine(targetPath, nomFichier.Replace(" ", "_"));
             if (!System.IO.Directory.Exists(targetPath))
             {
                 System.IO.Directory.CreateDirectory(targetPath);

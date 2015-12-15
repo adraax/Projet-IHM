@@ -40,8 +40,8 @@
             this.listeType = new System.Windows.Forms.ComboBox();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.parcourir = new System.Windows.Forms.Button();
-            this.ajouter = new System.Windows.Forms.Button();
             this.cheminMedia = new System.Windows.Forms.TextBox();
+            this.ajouter = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.SuspendLayout();
@@ -212,6 +212,16 @@
             this.parcourir.Visible = false;
             this.parcourir.Click += new System.EventHandler(this.parcourir_Click);
             // 
+            // cheminMedia
+            // 
+            this.cheminMedia.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cheminMedia.Enabled = false;
+            this.cheminMedia.Location = new System.Drawing.Point(3, 3);
+            this.cheminMedia.Name = "cheminMedia";
+            this.cheminMedia.Size = new System.Drawing.Size(332, 20);
+            this.cheminMedia.TabIndex = 1;
+            this.cheminMedia.Visible = false;
+            // 
             // ajouter
             // 
             this.ajouter.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -223,16 +233,6 @@
             this.ajouter.UseVisualStyleBackColor = true;
             this.ajouter.Visible = false;
             this.ajouter.Click += new System.EventHandler(this.ajouter_Click);
-            // 
-            // cheminMedia
-            // 
-            this.cheminMedia.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cheminMedia.Enabled = false;
-            this.cheminMedia.Location = new System.Drawing.Point(3, 3);
-            this.cheminMedia.Name = "cheminMedia";
-            this.cheminMedia.Size = new System.Drawing.Size(332, 20);
-            this.cheminMedia.TabIndex = 1;
-            this.cheminMedia.Visible = false;
             // 
             // AjoutMediaEpisode
             // 

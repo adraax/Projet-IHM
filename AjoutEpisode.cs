@@ -48,7 +48,6 @@ namespace Main_project_VERON_MERLIN
                 ajouterEpisode.Visible = false;
 
                 string serie = listeSerie.Items[listeSerie.SelectedIndex].ToString().Replace("'", "''");
-                Trace.WriteLine(string.Format("-- Ajout épisode : série {0} selectionnée", serie));
                 saisonLabel.Visible = true;
 
                 listeSaison.Items.Clear();
@@ -80,12 +79,10 @@ namespace Main_project_VERON_MERLIN
                 dateDiff.Visible = false;
                 ajouterEpisode.Visible = false;
 
-                string serie = listeSerie.Items[listeSerie.SelectedIndex].ToString().Replace("'", "''");
-                string saison = listeSaison.Items[listeSaison.SelectedIndex].ToString();
+                string serie = listeSerie.SelectedItem.ToString().Replace("'", "''");
+                string saison = listeSaison.SelectedItem.ToString();
                 string numSaison = saison.Substring(saison.Length - 1);
                 decimal noSaison = decimal.Parse(numSaison);
-
-                Trace.WriteLine(string.Format("-- Ajout épisode : saison {0} selectionnée", noSaison));
 
                 commande = string.Format("SELECT NBEPISODE FROM PROJET_IHM_SAISON WHERE NOMSERIE='{0}'", serie);
                 ds = bdd.Select(commande);

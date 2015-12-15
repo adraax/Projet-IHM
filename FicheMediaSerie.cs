@@ -12,7 +12,7 @@ using System.Windows.Forms;
 
 namespace Main_project_VERON_MERLIN
 {
-    public partial class FicheMediaEpisode : Form
+    public partial class FicheMediaSerie : Form
     {
         private string commande;
         private ConnexionOracle bdd;
@@ -21,7 +21,7 @@ namespace Main_project_VERON_MERLIN
         private ProcessStartInfo vlcInfo;
         private Process vlc;
 
-        public FicheMediaEpisode()
+        public FicheMediaSerie()
         {
             InitializeComponent();
             bdd = new ConnexionOracle();
@@ -36,22 +36,19 @@ namespace Main_project_VERON_MERLIN
             vlc = null;
         }
 
-        private void FicheMediaEpisode_Load(object sender, EventArgs e)
+        private void FicheMediaSerie_Load(object sender, EventArgs e)
         {
-            commande = string.Format("SELECT NUMEPISODE, NOMEPISODE, SYNOPSIS, DATEDIFFUSION FROM PROJET_IHM_EPISODE WHERE NOMSERIE='{0}' AND NUMEROSAISON={1} AND NUMEPISODE={2}", Properties.Settings.Default.serie, Properties.Settings.Default.saison, Properties.Settings.Default.episode);
-            ds = bdd.Select(commande);
-
-            this.Text = string.Format("Fiche média {0} - saison {1} - épisode {2} : {3}", Properties.Settings.Default.serie, Properties.Settings.Default.saison, Properties.Settings.Default.episode, (string)ds.Tables["Data"].Rows[0]["NOMEPISODE"]);
+            this.Text = string.Format("Fiche média {0}", Properties.Settings.Default.serie);
 
             RemplissagePanneau();
 
-            commande = string.Format("SELECT * FROM PROJET_IHM_MEDIA WHERE NOMSERIE='{0}' AND NUMEROSAISON={1} AND NUMEROEPISODE={2} AND TYPE='Vidéo'", Properties.Settings.Default.serie, Properties.Settings.Default.saison, Properties.Settings.Default.episode);
+            commande = string.Format("SELECT * FROM PROJET_IHM_MEDIA WHERE NOMSERIE='{0}' AND NUMEROSAISON IS NULL AND NUMEROEPISODE IS NULL AND TYPE='Vidéo'", Properties.Settings.Default.serie);
             ds = bdd.Select(commande);
 
             if (ds.Tables["Data"].Rows.Count == 0)
                 video.Enabled = false;
 
-            commande = string.Format("SELECT * FROM PROJET_IHM_MEDIA WHERE NOMSERIE='{0}' AND NUMEROSAISON={1} AND NUMEROEPISODE={2} AND TYPE='Son'", Properties.Settings.Default.serie, Properties.Settings.Default.saison, Properties.Settings.Default.episode);
+            commande = string.Format("SELECT * FROM PROJET_IHM_MEDIA WHERE NOMSERIE='{0}' AND NUMEROSAISON IS NULL AND NUMEROEPISODE IS NULL AND TYPE='Son'", Properties.Settings.Default.serie);
             ds = bdd.Select(commande);
 
             if (ds.Tables["Data"].Rows.Count == 0)
@@ -60,11 +57,11 @@ namespace Main_project_VERON_MERLIN
 
         private void RemplissagePanneau()
         {
-            commande = string.Format("SELECT * FROM PROJET_IHM_MEDIA WHERE NOMSERIE='{0}' AND NUMEROSAISON={1} AND NUMEROEPISODE={2} AND TYPE='Image'", Properties.Settings.Default.serie, Properties.Settings.Default.saison, Properties.Settings.Default.episode);
+            commande = string.Format("SELECT * FROM PROJET_IHM_MEDIA WHERE NOMSERIE='{0}' AND NUMEROSAISON IS NULL AND NUMEROEPISODE IS NULL AND TYPE='Image'", Properties.Settings.Default.serie);
 
             ds = bdd.Select(commande);
 
-            foreach(DataRow r in ds.Tables["Data"].Rows)
+            foreach (DataRow r in ds.Tables["Data"].Rows)
             {
                 PictureBox p = new PictureBox();
                 p.Width = 200;
@@ -87,12 +84,12 @@ namespace Main_project_VERON_MERLIN
                     vlc.Kill();
 
                 string chemin = string.Empty;
-                commande = string.Format("SELECT * FROM PROJET_IHM_MEDIA WHERE NOMSERIE='{0}' AND NUMEROSAISON={1} AND NUMEROEPISODE={2} AND TYPE='Son'", Properties.Settings.Default.serie, Properties.Settings.Default.saison, Properties.Settings.Default.episode);
+                commande = string.Format("SELECT * FROM PROJET_IHM_MEDIA WHERE NOMSERIE='{0}' AND NUMEROSAISON IS NULL AND NUMEROEPISODE IS NULL AND TYPE='Son'", Properties.Settings.Default.serie);
                 ds = bdd.Select(commande);
 
-                foreach(DataRow r in ds.Tables["Data"].Rows)
+                foreach (DataRow r in ds.Tables["Data"].Rows)
                 {
-                    if(File.Exists((string)r["CHEMIN"]))
+                    if (File.Exists((string)r["CHEMIN"]))
                         chemin += Directory.GetCurrentDirectory() + "\\" + (string)r["CHEMIN"];
                 }
 
@@ -118,7 +115,7 @@ namespace Main_project_VERON_MERLIN
                     vlc.Kill();
 
                 string chemin = string.Empty;
-                commande = string.Format("SELECT * FROM PROJET_IHM_MEDIA WHERE NOMSERIE='{0}' AND NUMEROSAISON={1} AND NUMEROEPISODE={2} AND TYPE='Vidéo'", Properties.Settings.Default.serie, Properties.Settings.Default.saison, Properties.Settings.Default.episode);
+                commande = string.Format("SELECT * FROM PROJET_IHM_MEDIA WHERE NOMSERIE='{0}' AND NUMEROSAISON IS NULL AND NUMEROEPISODE IS NULL AND TYPE='Son'", Properties.Settings.Default.serie);
                 ds = bdd.Select(commande);
 
                 foreach (DataRow r in ds.Tables["Data"].Rows)

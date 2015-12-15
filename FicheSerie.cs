@@ -84,6 +84,17 @@ namespace Main_project_VERON_MERLIN
                     Console.WriteLine((string)ds.Tables["Data"].Rows[0]["CHEMIN"]);
                 }
             }
+
+            commande = string.Format("SELECT * FROM PROJET_IHM_MEDIA WHERE NOMSERIE='{0}' AND NUMEROSAISON IS NULL AND NUMEROEPISODE IS NULL", Properties.Settings.Default.serie);
+            ds = bdd.Select(commande);
+
+            if (ds.Tables["Data"].Rows.Count != 0)
+                media.Text = "Afficher la liste des médias";
+            else
+            {
+                media.Text = "Aucuns médias pour cette série";
+                media.Enabled = false;
+            }
         }
 
         private void listeSaison_SelectedIndexChanged(object sender, EventArgs e)
@@ -164,6 +175,12 @@ namespace Main_project_VERON_MERLIN
                 else
                     noteLabel.Text = "Pas de notes pour cette série";
             }
+        }
+
+        private void media_Click(object sender, EventArgs e)
+        {
+            FicheMediaSerie f = new FicheMediaSerie();
+            f.ShowDialog();
         }
     }
 }

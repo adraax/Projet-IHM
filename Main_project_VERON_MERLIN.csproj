@@ -90,6 +90,12 @@
     <Compile Include="AjouterNoteEpisode.Designer.cs">
       <DependentUpon>AjouterNoteEpisode.cs</DependentUpon>
     </Compile>
+    <Compile Include="AjouterNoteSerie.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AjouterNoteSerie.Designer.cs">
+      <DependentUpon>AjouterNoteSerie.cs</DependentUpon>
+    </Compile>
     <Compile Include="AjoutMediaEpisode.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -151,6 +157,12 @@
     <Compile Include="ModifierNoteEpisode.Designer.cs">
       <DependentUpon>ModifierNoteEpisode.cs</DependentUpon>
     </Compile>
+    <Compile Include="ModifierNoteSerie.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModifierNoteSerie.Designer.cs">
+      <DependentUpon>ModifierNoteSerie.cs</DependentUpon>
+    </Compile>
     <Compile Include="ModifierSerie.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -179,6 +191,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AjouterNoteEpisode.resx">
       <DependentUpon>AjouterNoteEpisode.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AjouterNoteSerie.resx">
+      <DependentUpon>AjouterNoteSerie.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AjoutMediaEpisode.resx">
       <DependentUpon>AjoutMediaEpisode.cs</DependentUpon>
@@ -209,6 +224,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ModifierNoteEpisode.resx">
       <DependentUpon>ModifierNoteEpisode.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModifierNoteSerie.resx">
+      <DependentUpon>ModifierNoteSerie.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ModifierSerie.resx">
       <DependentUpon>ModifierSerie.cs</DependentUpon>

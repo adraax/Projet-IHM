@@ -29,24 +29,24 @@
         private void InitializeComponent()
         {
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.button1 = new System.Windows.Forms.Button();
             this.nomSerie = new System.Windows.Forms.Label();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.synopsisSerie = new System.Windows.Forms.RichTextBox();
             this.synopsisSerieLabel = new System.Windows.Forms.Label();
+            this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
+            this.labelEtat = new System.Windows.Forms.Label();
+            this.noteLabel = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.listeSaison = new System.Windows.Forms.ListBox();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.ImageBox = new System.Windows.Forms.PictureBox();
             this.suiviButton = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
-            this.labelEtat = new System.Windows.Forms.Label();
-            this.noteLabel = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
+            this.tableLayoutPanel4.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ImageBox)).BeginInit();
-            this.tableLayoutPanel4.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -71,6 +71,18 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(729, 508);
             this.tableLayoutPanel1.TabIndex = 0;
+            // 
+            // button1
+            // 
+            this.tableLayoutPanel1.SetColumnSpan(this.button1, 2);
+            this.button1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.button1.Location = new System.Drawing.Point(3, 480);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(723, 25);
+            this.button1.TabIndex = 1;
+            this.button1.Text = "Noter cette série";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // nomSerie
             // 
@@ -121,6 +133,44 @@
             this.synopsisSerieLabel.TabIndex = 0;
             this.synopsisSerieLabel.Text = "Synopsis :";
             this.synopsisSerieLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // tableLayoutPanel4
+            // 
+            this.tableLayoutPanel4.ColumnCount = 2;
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel4.Controls.Add(this.labelEtat, 0, 0);
+            this.tableLayoutPanel4.Controls.Add(this.noteLabel, 1, 0);
+            this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel4.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanel4.Name = "tableLayoutPanel4";
+            this.tableLayoutPanel4.RowCount = 1;
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(402, 19);
+            this.tableLayoutPanel4.TabIndex = 2;
+            // 
+            // labelEtat
+            // 
+            this.labelEtat.AutoSize = true;
+            this.labelEtat.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.labelEtat.Location = new System.Drawing.Point(3, 0);
+            this.labelEtat.Name = "labelEtat";
+            this.labelEtat.Size = new System.Drawing.Size(195, 19);
+            this.labelEtat.TabIndex = 0;
+            this.labelEtat.Text = "label2";
+            this.labelEtat.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // noteLabel
+            // 
+            this.noteLabel.AutoSize = true;
+            this.noteLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.noteLabel.Location = new System.Drawing.Point(204, 0);
+            this.noteLabel.Name = "noteLabel";
+            this.noteLabel.Size = new System.Drawing.Size(195, 19);
+            this.noteLabel.TabIndex = 1;
+            this.noteLabel.Text = "label2";
+            this.noteLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label1
             // 
@@ -181,55 +231,6 @@
             this.suiviButton.UseVisualStyleBackColor = true;
             this.suiviButton.Click += new System.EventHandler(this.suiviButton_Click);
             // 
-            // button1
-            // 
-            this.tableLayoutPanel1.SetColumnSpan(this.button1, 2);
-            this.button1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button1.Location = new System.Drawing.Point(3, 480);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(723, 25);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Noter cette série";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // tableLayoutPanel4
-            // 
-            this.tableLayoutPanel4.ColumnCount = 2;
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel4.Controls.Add(this.labelEtat, 0, 0);
-            this.tableLayoutPanel4.Controls.Add(this.noteLabel, 1, 0);
-            this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel4.Location = new System.Drawing.Point(3, 3);
-            this.tableLayoutPanel4.Name = "tableLayoutPanel4";
-            this.tableLayoutPanel4.RowCount = 1;
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(402, 19);
-            this.tableLayoutPanel4.TabIndex = 2;
-            // 
-            // labelEtat
-            // 
-            this.labelEtat.AutoSize = true;
-            this.labelEtat.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.labelEtat.Location = new System.Drawing.Point(3, 0);
-            this.labelEtat.Name = "labelEtat";
-            this.labelEtat.Size = new System.Drawing.Size(195, 19);
-            this.labelEtat.TabIndex = 0;
-            this.labelEtat.Text = "label2";
-            this.labelEtat.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // noteLabel
-            // 
-            this.noteLabel.AutoSize = true;
-            this.noteLabel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.noteLabel.Location = new System.Drawing.Point(204, 0);
-            this.noteLabel.Name = "noteLabel";
-            this.noteLabel.Size = new System.Drawing.Size(195, 19);
-            this.noteLabel.TabIndex = 1;
-            this.noteLabel.Text = "label2";
-            this.noteLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // FicheSerie
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -243,10 +244,10 @@
             this.tableLayoutPanel1.PerformLayout();
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
-            this.tableLayoutPanel3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.ImageBox)).EndInit();
             this.tableLayoutPanel4.ResumeLayout(false);
             this.tableLayoutPanel4.PerformLayout();
+            this.tableLayoutPanel3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.ImageBox)).EndInit();
             this.ResumeLayout(false);
 
         }

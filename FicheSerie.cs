@@ -17,6 +17,7 @@ namespace Main_project_VERON_MERLIN
         private ConnexionOracle bdd;
         private DataSet ds;
         private Image image;
+
         public FicheSerie()
         {
             InitializeComponent();
@@ -33,6 +34,14 @@ namespace Main_project_VERON_MERLIN
 
             synopsisSerie.Text = (string)ds.Tables["Data"].Rows[0]["SYNOPSIS"];
             labelEtat.Text = string.Format("État : {0}", (string)ds.Tables["Data"].Rows[0]["ETAT"]);
+
+            commande = string.Format("SELECT AVG(NOTE) AS MOYENNE FROM PROJET_IHM_NOTE WHERE NOMSERIE='{0}' AND NUMEROSAISON IS NULL AND NUMEROEPISODE IS NULL", Properties.Settings.Default.serie);
+            ds = bdd.Select(commande);
+
+            if (ds.Tables["Data"].Rows[0]["MOYENNE"].ToString() != "")
+                noteLabel.Text = string.Format("Note : {0}/20", (decimal)ds.Tables["Data"].Rows[0]["MOYENNE"]);
+            else
+                noteLabel.Text = "Pas de notes pour cette série";
 
             commande = string.Format("SELECT NUMEROSAISON FROM PROJET_IHM_SAISON WHERE NOMSERIE='{0}'", Properties.Settings.Default.serie);
             ds = bdd.Select(commande);
@@ -121,6 +130,39 @@ namespace Main_project_VERON_MERLIN
             {
                 Bitmap im = new Bitmap(image, new Size(ImageBox.Size.Width, ImageBox.Size.Height));
                 ImageBox.Image = im;
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            commande = string.Format("SELECT * FROM PROJET_IHM_NOTE WHERE NOMSERIE='{0}' AND NUMEROSAISON IS NULL AND NUMEROEPISODE IS NULL AND USERNAME='{1}'", Properties.Settings.Default.serie, Properties.Settings.Default.username);
+            ds = bdd.Select(commande);
+
+            if (ds.Tables["Data"].Rows.Count != 0)
+            {
+                ModifierNoteSerie m = new ModifierNoteSerie();
+                m.ShowDialog();
+
+                commande = string.Format("SELECT AVG(NOTE) AS MOYENNE FROM PROJET_IHM_NOTE WHERE NOMSERIE='{0}' AND NUMEROSAISON IS NULL AND NUMEROEPISODE IS NULL", Properties.Settings.Default.serie);
+                ds = bdd.Select(commande);
+
+                if (ds.Tables["Data"].Rows[0]["MOYENNE"].ToString() != "")
+                    noteLabel.Text = string.Format("Note : {0}/20", (decimal)ds.Tables["Data"].Rows[0]["MOYENNE"]);
+                else
+                    noteLabel.Text = "Pas de notes pour cette série";
+            }
+            else
+            {
+                AjouterNoteSerie a = new AjouterNoteSerie();
+                a.ShowDialog();
+
+                commande = string.Format("SELECT AVG(NOTE) AS MOYENNE FROM PROJET_IHM_NOTE WHERE NOMSERIE='{0}' AND NUMEROSAISON IS NULL AND NUMEROEPISODE IS NULL", Properties.Settings.Default.serie);
+                ds = bdd.Select(commande);
+
+                if (ds.Tables["Data"].Rows[0]["MOYENNE"].ToString() != "")
+                    noteLabel.Text = string.Format("Note : {0}/20", (decimal)ds.Tables["Data"].Rows[0]["MOYENNE"]);
+                else
+                    noteLabel.Text = "Pas de notes pour cette série";
             }
         }
     }

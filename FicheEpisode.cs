@@ -37,9 +37,6 @@ namespace Main_project_VERON_MERLIN
             commande = string.Format("SELECT AVG(NOTE) AS MOYENNE FROM PROJET_IHM_NOTE WHERE NOMSERIE='{0}' AND NUMEROSAISON={1} AND NUMEROEPISODE={2}", Properties.Settings.Default.serie, Properties.Settings.Default.saison, Properties.Settings.Default.episode);
             ds = bdd.Select(commande);
 
-            Console.WriteLine("bleu");
-            Console.WriteLine(ds.Tables["Data"].Rows[0]["MOYENNE"]);
-
             if (ds.Tables["Data"].Rows[0]["MOYENNE"].ToString() != "")
                 noteEpisode.Text = string.Format("Note : {0}/20", (decimal)ds.Tables["Data"].Rows[0]["MOYENNE"]);
             else
@@ -66,11 +63,27 @@ namespace Main_project_VERON_MERLIN
             {
                 ModifierNoteEpisode m = new ModifierNoteEpisode();
                 m.ShowDialog();
+
+                commande = string.Format("SELECT AVG(NOTE) AS MOYENNE FROM PROJET_IHM_NOTE WHERE NOMSERIE='{0}' AND NUMEROSAISON={1} AND NUMEROEPISODE={2}", Properties.Settings.Default.serie, Properties.Settings.Default.saison, Properties.Settings.Default.episode);
+                ds = bdd.Select(commande);
+
+                if (ds.Tables["Data"].Rows[0]["MOYENNE"].ToString() != "")
+                    noteEpisode.Text = string.Format("Note : {0}/20", (decimal)ds.Tables["Data"].Rows[0]["MOYENNE"]);
+                else
+                    noteEpisode.Text = "Pas de notes pour cet épisode";
             }
             else
             {
                 AjouterNoteEpisode a = new AjouterNoteEpisode();
                 a.ShowDialog();
+
+                commande = string.Format("SELECT AVG(NOTE) AS MOYENNE FROM PROJET_IHM_NOTE WHERE NOMSERIE='{0}' AND NUMEROSAISON={1} AND NUMEROEPISODE={2}", Properties.Settings.Default.serie, Properties.Settings.Default.saison, Properties.Settings.Default.episode);
+                ds = bdd.Select(commande);
+
+                if (ds.Tables["Data"].Rows[0]["MOYENNE"].ToString() != "")
+                    noteEpisode.Text = string.Format("Note : {0}/20", (decimal)ds.Tables["Data"].Rows[0]["MOYENNE"]);
+                else
+                    noteEpisode.Text = "Pas de notes pour cet épisode";
             }
         }
     }
